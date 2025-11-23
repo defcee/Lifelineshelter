@@ -188,26 +188,26 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-bold mb-4">Quick Links</h3>
+              <h3 className="font-bold mb-4">{t("footer.quickLinks")}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link to="/about" className="text-gray-200 hover:text-lifeline-blue transition-colors">
-                    About Us
+                    {t("nav.about")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/programs" className="text-gray-200 hover:text-lifeline-blue transition-colors">
-                    Our Programs
+                    {t("nav.programs")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/impact" className="text-gray-200 hover:text-lifeline-blue transition-colors">
-                    Impact Stories
+                    {t("nav.impact")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/contact" className="text-gray-200 hover:text-lifeline-blue transition-colors">
-                    Contact
+                    {t("nav.contact")}
                   </Link>
                 </li>
               </ul>
@@ -215,21 +215,21 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Get Involved */}
             <div>
-              <h3 className="font-bold mb-4">Get Involved</h3>
+              <h3 className="font-bold mb-4">{t("footer.getInvolved")}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link to="/get-involved" className="text-gray-200 hover:text-lifeline-blue transition-colors">
-                    Volunteer
+                    {t("nav.volunteer")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/support" className="text-gray-200 hover:text-lifeline-blue transition-colors">
-                    Donate
+                    {t("nav.donate")}
                   </Link>
                 </li>
                 <li>
                   <Link to="/crisis" className="text-gray-200 hover:text-lifeline-blue transition-colors">
-                    Crisis Updates
+                    {t("nav.crisis")}
                   </Link>
                 </li>
               </ul>
@@ -237,9 +237,9 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Social & Newsletter */}
             <div>
-              <h3 className="font-bold mb-4">Stay Updated</h3>
+              <h3 className="font-bold mb-4">{t("footer.stayUpdated")}</h3>
               <p className="text-sm text-gray-200 mb-4">
-                Subscribe to our newsletter for impact updates and emergency alerts
+                {t("footer.newsletter")}
               </p>
               <input
                 type="email"
