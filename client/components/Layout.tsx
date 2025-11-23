@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Heart, Menu, X } from "lucide-react";
+import { Heart, Menu, X, Globe } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { Language } from "@/lib/i18n";
 
 interface LayoutProps {
   children: ReactNode;
@@ -9,16 +11,25 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About Us", href: "/about" },
-    { label: "The Crisis", href: "/crisis" },
-    { label: "Our Programs", href: "/programs" },
-    { label: "Get Involved", href: "/get-involved" },
-    { label: "Support Us", href: "/support" },
-    { label: "Impact Stories", href: "/impact" },
-    { label: "Contact", href: "/contact" },
+    { label: t("nav.home"), href: "/" },
+    { label: t("nav.about"), href: "/about" },
+    { label: t("nav.crisis"), href: "/crisis" },
+    { label: t("nav.programs"), href: "/programs" },
+    { label: t("nav.getInvolved"), href: "/get-involved" },
+    { label: t("nav.support"), href: "/support" },
+    { label: t("nav.impact"), href: "/impact" },
+    { label: t("nav.contact"), href: "/contact" },
+  ];
+
+  const languages: { code: Language; label: string; flag: string }[] = [
+    { code: "en", label: "English", flag: "🇬🇧" },
+    { code: "ha", label: "Hausa", flag: "🇳🇬" },
+    { code: "yo", label: "Yoruba", flag: "🇳🇬" },
+    { code: "ig", label: "Igbo", flag: "🇳🇬" },
   ];
 
   return (
