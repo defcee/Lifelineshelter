@@ -1,9 +1,24 @@
 import "./global.css";
 
-import { createRoot } from "react-dom/client";
+import { createRoot, Root } from "react-dom/client";
 import App from "./App";
 
-const rootElement = document.getElementById("root");
-if (rootElement) {
-  createRoot(rootElement).render(<App />);
+let root: Root | null = null;
+
+function render() {
+  const rootElement = document.getElementById("root");
+  if (!rootElement) return;
+
+  if (!root) {
+    root = createRoot(rootElement);
+  }
+  root.render(<App />);
+}
+
+render();
+
+if (import.meta.hot) {
+  import.meta.hot.accept("./App", () => {
+    render();
+  });
 }
