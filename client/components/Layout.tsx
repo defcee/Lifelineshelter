@@ -182,7 +182,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 <span className="font-bold">LifeLine Shelter</span>
               </div>
               <p className="text-sm text-gray-200">
-                Supporting victims of crisis, terrorism, and displacement in Nigeria
+                {t("footer.about")}
               </p>
             </div>
 
