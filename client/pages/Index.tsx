@@ -1,7 +1,17 @@
 import { Layout } from "@/components/Layout";
 import { ImageCarousel } from "@/components/ImageCarousel";
 import { Link } from "react-router-dom";
-import { Heart, Users, Droplets, Stethoscope, BookOpen, Brain, MapPin, TrendingUp, ArrowRight } from "lucide-react";
+import {
+  Heart,
+  Users,
+  Droplets,
+  Stethoscope,
+  BookOpen,
+  Brain,
+  MapPin,
+  TrendingUp,
+  ArrowRight,
+} from "lucide-react";
 
 const Index = () => {
   const heroCarouselImages = [
@@ -39,7 +49,9 @@ const Index = () => {
                   Every Life Matters
                 </h1>
                 <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-lg">
-                  LifeLine Shelter stands with the victims of crisis, terrorism, and displacement in Nigeria. Together, we provide immediate relief and long-term hope.
+                  LifeLine Shelter stands with the victims of crisis, terrorism,
+                  and displacement in Nigeria. Together, we provide immediate
+                  relief and long-term hope.
                 </p>
               </div>
 
@@ -93,11 +105,14 @@ const Index = () => {
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group cursor-pointer border border-lifeline-sand"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-lifeline-earth">Crisis Updates</h3>
+                <h3 className="text-xl font-bold text-lifeline-earth">
+                  Crisis Updates
+                </h3>
                 <MapPin className="w-6 h-6 text-lifeline-blue group-hover:translate-x-1 transition-transform" />
               </div>
               <p className="text-gray-600 text-sm">
-                Understand the scale of the crisis with real-time statistics and affected regions
+                Understand the scale of the crisis with real-time statistics and
+                affected regions
               </p>
             </Link>
 
@@ -106,11 +121,14 @@ const Index = () => {
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group cursor-pointer border border-lifeline-sand"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-lifeline-earth">Impact Stories</h3>
+                <h3 className="text-xl font-bold text-lifeline-earth">
+                  Impact Stories
+                </h3>
                 <TrendingUp className="w-6 h-6 text-lifeline-green group-hover:translate-x-1 transition-transform" />
               </div>
               <p className="text-gray-600 text-sm">
-                Read inspiring stories of lives transformed through our humanitarian efforts
+                Read inspiring stories of lives transformed through our
+                humanitarian efforts
               </p>
             </Link>
 
@@ -119,11 +137,14 @@ const Index = () => {
               className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group cursor-pointer border border-lifeline-sand"
             >
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-lifeline-earth">Current Campaigns</h3>
+                <h3 className="text-xl font-bold text-lifeline-earth">
+                  Current Campaigns
+                </h3>
                 <Heart className="w-6 h-6 text-lifeline-warm group-hover:translate-x-1 transition-transform" />
               </div>
               <p className="text-gray-600 text-sm">
-                Join our active campaigns and make a direct impact in communities today
+                Join our active campaigns and make a direct impact in
+                communities today
               </p>
             </Link>
           </div>
@@ -134,7 +155,9 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">Latest Crisis Updates</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">
+              Latest Crisis Updates
+            </h2>
             <p className="text-lg text-gray-600">
               Real-time updates on the humanitarian crisis in northern Nigeria
             </p>
@@ -161,7 +184,9 @@ const Index = () => {
                   Escalating Crisis in Borno State
                 </h3>
                 <p className="text-gray-700 text-sm mb-4">
-                  Over 50,000 newly displaced persons reported in Maiduguri and surrounding areas following security incidents. Our emergency response teams are on the ground providing immediate aid.
+                  Over 50,000 newly displaced persons reported in Maiduguri and
+                  surrounding areas following security incidents. Our emergency
+                  response teams are on the ground providing immediate aid.
                 </p>
                 <Link
                   to="/crisis"
@@ -192,7 +217,10 @@ const Index = () => {
                   Emergency Food Distribution Campaign
                 </h3>
                 <p className="text-gray-700 text-sm mb-4">
-                  LifeLine Shelter distributed food packages to 15,000 families across 8 displaced communities. This initiative provided emergency sustenance to vulnerable populations in Adamawa State.
+                  LifeLine Shelter distributed food packages to 15,000 families
+                  across 8 displaced communities. This initiative provided
+                  emergency sustenance to vulnerable populations in Adamawa
+                  State.
                 </p>
                 <Link
                   to="/impact"
@@ -223,7 +251,10 @@ const Index = () => {
                   Clean Water Access Project Success
                 </h3>
                 <p className="text-gray-700 text-sm mb-4">
-                  Successfully installed 12 water boreholes in IDPs camps across Yobe State, providing clean water access to 25,000 individuals. A critical step in disease prevention and community health.
+                  Successfully installed 12 water boreholes in IDPs camps across
+                  Yobe State, providing clean water access to 25,000
+                  individuals. A critical step in disease prevention and
+                  community health.
                 </p>
                 <Link
                   to="/programs"
@@ -254,7 +285,9 @@ const Index = () => {
                   Mobile Healthcare Clinics Active
                 </h3>
                 <p className="text-gray-700 text-sm mb-4">
-                  Our mobile healthcare teams have conducted 3,200 medical consultations across 6 IDP camps. Free vaccinations, maternal care, and emergency medical services continue daily.
+                  Our mobile healthcare teams have conducted 3,200 medical
+                  consultations across 6 IDP camps. Free vaccinations, maternal
+                  care, and emergency medical services continue daily.
                 </p>
                 <Link
                   to="/programs"
@@ -281,21 +314,30 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">Our Life-Saving Programs</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">
+              Our Life-Saving Programs
+            </h2>
             <p className="text-lg text-gray-600">
-              We address the most urgent needs of displaced families with comprehensive, compassionate care
+              We address the most urgent needs of displaced families with
+              comprehensive, compassionate care
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Food Relief */}
-            <Link to="/programs" className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-xl border border-orange-200 hover:shadow-lg transition-shadow group cursor-pointer">
+            <Link
+              to="/programs"
+              className="bg-gradient-to-br from-orange-50 to-orange-100 p-8 rounded-xl border border-orange-200 hover:shadow-lg transition-shadow group cursor-pointer"
+            >
               <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🍽️</span>
               </div>
-              <h3 className="text-xl font-bold text-lifeline-earth mb-3">Food Relief</h3>
+              <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                Food Relief
+              </h3>
               <p className="text-gray-700 text-sm mb-4">
-                Ensuring vulnerable families have access to nutritious meals and food security
+                Ensuring vulnerable families have access to nutritious meals and
+                food security
               </p>
               <div className="text-lifeline-blue font-semibold text-sm flex items-center gap-2">
                 Learn More <ArrowRight className="w-4 h-4" />
@@ -303,13 +345,19 @@ const Index = () => {
             </Link>
 
             {/* Clean Water */}
-            <Link to="/programs" className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 hover:shadow-lg transition-shadow group cursor-pointer">
+            <Link
+              to="/programs"
+              className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-xl border border-blue-200 hover:shadow-lg transition-shadow group cursor-pointer"
+            >
               <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Droplets className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-lifeline-earth mb-3">Clean Water</h3>
+              <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                Clean Water
+              </h3>
               <p className="text-gray-700 text-sm mb-4">
-                Installing water treatment systems and boreholes in displaced communities
+                Installing water treatment systems and boreholes in displaced
+                communities
               </p>
               <div className="text-lifeline-blue font-semibold text-sm flex items-center gap-2">
                 Learn More <ArrowRight className="w-4 h-4" />
@@ -317,13 +365,19 @@ const Index = () => {
             </Link>
 
             {/* Healthcare */}
-            <Link to="/programs" className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl border border-red-200 hover:shadow-lg transition-shadow group cursor-pointer">
+            <Link
+              to="/programs"
+              className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl border border-red-200 hover:shadow-lg transition-shadow group cursor-pointer"
+            >
               <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Stethoscope className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-lifeline-earth mb-3">Healthcare Services</h3>
+              <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                Healthcare Services
+              </h3>
               <p className="text-gray-700 text-sm mb-4">
-                Mobile clinics providing vaccinations, maternal care, and emergency medical aid
+                Mobile clinics providing vaccinations, maternal care, and
+                emergency medical aid
               </p>
               <div className="text-lifeline-blue font-semibold text-sm flex items-center gap-2">
                 Learn More <ArrowRight className="w-4 h-4" />
@@ -331,13 +385,19 @@ const Index = () => {
             </Link>
 
             {/* Education */}
-            <Link to="/programs" className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200 hover:shadow-lg transition-shadow group cursor-pointer">
+            <Link
+              to="/programs"
+              className="bg-gradient-to-br from-green-50 to-green-100 p-8 rounded-xl border border-green-200 hover:shadow-lg transition-shadow group cursor-pointer"
+            >
               <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <BookOpen className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-lifeline-earth mb-3">Education Programs</h3>
+              <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                Education Programs
+              </h3>
               <p className="text-gray-700 text-sm mb-4">
-                Creating safe learning spaces and providing educational supplies for displaced children
+                Creating safe learning spaces and providing educational supplies
+                for displaced children
               </p>
               <div className="text-lifeline-blue font-semibold text-sm flex items-center gap-2">
                 Learn More <ArrowRight className="w-4 h-4" />
@@ -345,13 +405,19 @@ const Index = () => {
             </Link>
 
             {/* Mental Health */}
-            <Link to="/programs" className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl border border-purple-200 hover:shadow-lg transition-shadow group cursor-pointer">
+            <Link
+              to="/programs"
+              className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-xl border border-purple-200 hover:shadow-lg transition-shadow group cursor-pointer"
+            >
               <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Brain className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-lifeline-earth mb-3">Mental Health Support</h3>
+              <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                Mental Health Support
+              </h3>
               <p className="text-gray-700 text-sm mb-4">
-                Trauma counseling and community healing activities for psychological recovery
+                Trauma counseling and community healing activities for
+                psychological recovery
               </p>
               <div className="text-lifeline-blue font-semibold text-sm flex items-center gap-2">
                 Learn More <ArrowRight className="w-4 h-4" />
@@ -359,13 +425,19 @@ const Index = () => {
             </Link>
 
             {/* Emergency Response */}
-            <Link to="/programs" className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-xl border border-yellow-200 hover:shadow-lg transition-shadow group cursor-pointer">
+            <Link
+              to="/programs"
+              className="bg-gradient-to-br from-yellow-50 to-yellow-100 p-8 rounded-xl border border-yellow-200 hover:shadow-lg transition-shadow group cursor-pointer"
+            >
               <div className="w-12 h-12 bg-yellow-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <span className="text-2xl">🚨</span>
               </div>
-              <h3 className="text-xl font-bold text-lifeline-earth mb-3">Emergency Response</h3>
+              <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                Emergency Response
+              </h3>
               <p className="text-gray-700 text-sm mb-4">
-                Rapid response teams providing immediate assistance during crises and emergencies
+                Rapid response teams providing immediate assistance during
+                crises and emergencies
               </p>
               <div className="text-lifeline-blue font-semibold text-sm flex items-center gap-2">
                 Learn More <ArrowRight className="w-4 h-4" />
@@ -388,9 +460,12 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-lifeline-sand bg-opacity-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">Recent Impact Stories</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">
+              Recent Impact Stories
+            </h2>
             <p className="text-lg text-gray-600">
-              Real stories of hope, resilience, and transformation from families we've helped
+              Real stories of hope, resilience, and transformation from families
+              we've helped
             </p>
           </div>
 
@@ -405,11 +480,18 @@ const Index = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-lifeline-earth mb-2">Aisha's Second Chance</h3>
+                <h3 className="text-xl font-bold text-lifeline-earth mb-2">
+                  Aisha's Second Chance
+                </h3>
                 <p className="text-gray-600 text-sm mb-4">
-                  After fleeing her home with three children, Aisha found shelter, food, and hope with LifeLine. Today, her eldest is back in school.
+                  After fleeing her home with three children, Aisha found
+                  shelter, food, and hope with LifeLine. Today, her eldest is
+                  back in school.
                 </p>
-                <Link to="/impact" className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2">
+                <Link
+                  to="/impact"
+                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                >
                   Read Full Story <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -425,11 +507,18 @@ const Index = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-lifeline-earth mb-2">Water Brings Life to Maiduguri</h3>
+                <h3 className="text-xl font-bold text-lifeline-earth mb-2">
+                  Water Brings Life to Maiduguri
+                </h3>
                 <p className="text-gray-600 text-sm mb-4">
-                  Our new borehole system now provides clean water to over 5,000 people in a displaced settlement, preventing waterborne diseases.
+                  Our new borehole system now provides clean water to over 5,000
+                  people in a displaced settlement, preventing waterborne
+                  diseases.
                 </p>
-                <Link to="/impact" className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2">
+                <Link
+                  to="/impact"
+                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                >
                   Read Full Story <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -451,16 +540,21 @@ const Index = () => {
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">Ways to Support Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">
+              Ways to Support Us
+            </h2>
             <p className="text-lg text-gray-600">
-              Every contribution, no matter the size, changes lives and brings hope to displaced families
+              Every contribution, no matter the size, changes lives and brings
+              hope to displaced families
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Sponsor Child */}
             <div className="bg-gradient-to-b from-lifeline-blue to-blue-600 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">👧</div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
+                👧
+              </div>
               <h3 className="text-lg font-bold mb-3">Sponsor a Child</h3>
               <p className="text-sm text-blue-100 mb-6">
                 Support a child's education and wellbeing for a year
@@ -470,7 +564,9 @@ const Index = () => {
 
             {/* Sponsor Family */}
             <div className="bg-gradient-to-b from-lifeline-green to-green-600 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">👨‍👩‍👧‍👦</div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
+                👨‍👩‍👧‍👦
+              </div>
               <h3 className="text-lg font-bold mb-3">Sponsor a Family</h3>
               <p className="text-sm text-green-100 mb-6">
                 Provide food, shelter, and care for an entire family
@@ -480,7 +576,9 @@ const Index = () => {
 
             {/* Community Project */}
             <div className="bg-gradient-to-b from-lifeline-warm to-orange-600 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">🏫</div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
+                🏫
+              </div>
               <h3 className="text-lg font-bold mb-3">Sponsor a Project</h3>
               <p className="text-sm text-orange-100 mb-6">
                 Build a school, water system, or healthcare facility
@@ -490,7 +588,9 @@ const Index = () => {
 
             {/* One-Time Donation */}
             <div className="bg-gradient-to-b from-purple-500 to-purple-700 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">❤️</div>
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
+                ❤️
+              </div>
               <h3 className="text-lg font-bold mb-3">One-Time Gift</h3>
               <p className="text-sm text-purple-100 mb-6">
                 Make an immediate impact with a one-time donation
@@ -513,9 +613,12 @@ const Index = () => {
       {/* Call to Action Section */}
       <section className="py-16 md:py-20 bg-gradient-to-r from-lifeline-blue to-blue-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Your Action Can Save Lives Today</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Your Action Can Save Lives Today
+          </h2>
           <p className="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-            Thousands of families displaced by conflict await help. With your support, we provide food, shelter, healthcare, and hope.
+            Thousands of families displaced by conflict await help. With your
+            support, we provide food, shelter, healthcare, and hope.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -530,7 +633,8 @@ const Index = () => {
           </div>
 
           <p className="text-sm text-blue-200 mt-6">
-            All donations are tax-deductible. We maintain transparency with detailed impact reports.
+            All donations are tax-deductible. We maintain transparency with
+            detailed impact reports.
           </p>
         </div>
       </section>

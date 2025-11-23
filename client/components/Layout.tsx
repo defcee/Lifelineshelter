@@ -82,7 +82,9 @@ export const Layout = ({ children }: LayoutProps) => {
                         setLanguageMenuOpen(false);
                       }}
                       className={`block w-full text-left px-4 py-2 hover:bg-lifeline-sand hover:bg-opacity-20 transition-colors ${
-                        language === lang.code ? "bg-lifeline-blue text-white" : "text-lifeline-earth"
+                        language === lang.code
+                          ? "bg-lifeline-blue text-white"
+                          : "text-lifeline-earth"
                       }`}
                     >
                       <span className="mr-2">{lang.flag}</span>
@@ -132,7 +134,9 @@ export const Layout = ({ children }: LayoutProps) => {
 
               {/* Mobile Language Selector */}
               <div className="pt-4 border-t border-lifeline-sand">
-                <p className="text-sm font-semibold text-lifeline-earth mb-3">Language / Harshe</p>
+                <p className="text-sm font-semibold text-lifeline-earth mb-3">
+                  Language / Harshe
+                </p>
                 <div className="grid grid-cols-2 gap-2">
                   {languages.map((lang) => (
                     <button
@@ -181,9 +185,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 </div>
                 <span className="font-bold">LifeLine Shelter</span>
               </div>
-              <p className="text-sm text-gray-200">
-                {t("footer.about")}
-              </p>
+              <p className="text-sm text-gray-200">{t("footer.about")}</p>
             </div>
 
             {/* Quick Links */}
@@ -191,22 +193,34 @@ export const Layout = ({ children }: LayoutProps) => {
               <h3 className="font-bold mb-4">{t("footer.quickLinks")}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link to="/about" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                  <Link
+                    to="/about"
+                    className="text-gray-200 hover:text-lifeline-blue transition-colors"
+                  >
                     {t("nav.about")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/programs" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                  <Link
+                    to="/programs"
+                    className="text-gray-200 hover:text-lifeline-blue transition-colors"
+                  >
                     {t("nav.programs")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/impact" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                  <Link
+                    to="/impact"
+                    className="text-gray-200 hover:text-lifeline-blue transition-colors"
+                  >
                     {t("nav.impact")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                  <Link
+                    to="/contact"
+                    className="text-gray-200 hover:text-lifeline-blue transition-colors"
+                  >
                     {t("nav.contact")}
                   </Link>
                 </li>
@@ -218,17 +232,26 @@ export const Layout = ({ children }: LayoutProps) => {
               <h3 className="font-bold mb-4">{t("footer.getInvolved")}</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link to="/get-involved" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                  <Link
+                    to="/get-involved"
+                    className="text-gray-200 hover:text-lifeline-blue transition-colors"
+                  >
                     {t("nav.volunteer")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/support" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                  <Link
+                    to="/support"
+                    className="text-gray-200 hover:text-lifeline-blue transition-colors"
+                  >
                     {t("nav.donate")}
                   </Link>
                 </li>
                 <li>
-                  <Link to="/crisis" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                  <Link
+                    to="/crisis"
+                    className="text-gray-200 hover:text-lifeline-blue transition-colors"
+                  >
                     {t("nav.crisis")}
                   </Link>
                 </li>
@@ -257,13 +280,22 @@ export const Layout = ({ children }: LayoutProps) => {
             <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-200">
               <p>&copy; 2024 LifeLine Shelter. {t("footer.copyright")}</p>
               <div className="flex gap-6 mt-4 md:mt-0">
-                <a href="#" className="hover:text-lifeline-blue transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-lifeline-blue transition-colors"
+                >
                   {t("footer.privacy")}
                 </a>
-                <a href="#" className="hover:text-lifeline-blue transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-lifeline-blue transition-colors"
+                >
                   {t("footer.terms")}
                 </a>
-                <a href="#" className="hover:text-lifeline-blue transition-colors">
+                <a
+                  href="#"
+                  className="hover:text-lifeline-blue transition-colors"
+                >
                   {t("footer.accessibility")}
                 </a>
               </div>

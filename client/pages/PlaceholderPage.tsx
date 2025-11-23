@@ -16,24 +16,24 @@ const PlaceholderPage = ({ title, description }: PlaceholderPageProps) => {
             <div className="w-16 h-16 bg-lifeline-blue rounded-full flex items-center justify-center mx-auto mb-6">
               <span className="text-3xl">🔄</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl font-bold text-lifeline-earth mb-4">
               {title}
             </h1>
-            
-            <p className="text-lg text-gray-600 mb-8">
-              {description}
-            </p>
+
+            <p className="text-lg text-gray-600 mb-8">{description}</p>
 
             <div className="bg-blue-50 border border-lifeline-blue rounded-xl p-8 mb-8">
               <p className="text-lifeline-earth font-semibold mb-3">
                 📝 This page is being developed
               </p>
               <p className="text-gray-700 mb-4">
-                Continue chatting with us to customize and populate this page with your content, stories, and updates.
+                Continue chatting with us to customize and populate this page
+                with your content, stories, and updates.
               </p>
               <p className="text-sm text-gray-600">
-                We're ready to build exactly what you need for this section of your LifeLine Shelter website.
+                We're ready to build exactly what you need for this section of
+                your LifeLine Shelter website.
               </p>
             </div>
 

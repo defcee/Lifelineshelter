@@ -32,34 +32,44 @@ export const translations: Record<Language, Translations> = {
     },
     quickLinks: {
       crisisUpdates: "Crisis Updates",
-      crisisDesc: "Understand the scale of the crisis with real-time statistics and affected regions",
+      crisisDesc:
+        "Understand the scale of the crisis with real-time statistics and affected regions",
       impactStories: "Impact Stories",
-      storiesDesc: "Read inspiring stories of lives transformed through our humanitarian efforts",
+      storiesDesc:
+        "Read inspiring stories of lives transformed through our humanitarian efforts",
       campaigns: "Current Campaigns",
-      campaignsDesc: "Join our active campaigns and make a direct impact in communities today",
+      campaignsDesc:
+        "Join our active campaigns and make a direct impact in communities today",
     },
     programs: {
       title: "Our Life-Saving Programs",
       description:
         "We address the most urgent needs of displaced families with comprehensive, compassionate care",
       foodRelief: "Food Relief",
-      foodDesc: "Ensuring vulnerable families have access to nutritious meals and food security",
+      foodDesc:
+        "Ensuring vulnerable families have access to nutritious meals and food security",
       cleanWater: "Clean Water",
-      waterDesc: "Installing water treatment systems and boreholes in displaced communities",
+      waterDesc:
+        "Installing water treatment systems and boreholes in displaced communities",
       healthcare: "Healthcare Services",
-      healthDesc: "Mobile clinics providing vaccinations, maternal care, and emergency medical aid",
+      healthDesc:
+        "Mobile clinics providing vaccinations, maternal care, and emergency medical aid",
       education: "Education Programs",
-      eduDesc: "Creating safe learning spaces and providing educational supplies for displaced children",
+      eduDesc:
+        "Creating safe learning spaces and providing educational supplies for displaced children",
       mentalHealth: "Mental Health Support",
-      mentalDesc: "Trauma counseling and community healing activities for psychological recovery",
+      mentalDesc:
+        "Trauma counseling and community healing activities for psychological recovery",
       emergency: "Emergency Response",
-      emergencyDesc: "Rapid response teams providing immediate assistance during crises and emergencies",
+      emergencyDesc:
+        "Rapid response teams providing immediate assistance during crises and emergencies",
       exploreAll: "Explore All Programs",
       learnMore: "Learn More",
     },
     impact: {
       title: "Recent Impact Stories",
-      description: "Real stories of hope, resilience, and transformation from families we've helped",
+      description:
+        "Real stories of hope, resilience, and transformation from families we've helped",
       readFullStory: "Read Full Story",
     },
     support: {
@@ -71,7 +81,8 @@ export const translations: Record<Language, Translations> = {
       sponsorFamily: "Sponsor a Family",
       sponsorFamilyDesc: "Provide food, shelter, and care for an entire family",
       sponsorProject: "Sponsor a Project",
-      sponsorProjectDesc: "Build a school, water system, or healthcare facility",
+      sponsorProjectDesc:
+        "Build a school, water system, or healthcare facility",
       oneTimeGift: "One-Time Gift",
       oneTimeDesc: "Make an immediate impact with a one-time donation",
       exploreAll: "Explore All Support Options",
@@ -82,14 +93,17 @@ export const translations: Record<Language, Translations> = {
         "Thousands of families displaced by conflict await help. With your support, we provide food, shelter, healthcare, and hope.",
       donateNow: "Donate Now",
       joinVolunteer: "Join as Volunteer",
-      taxDeductible: "All donations are tax-deductible. We maintain transparency with detailed impact reports.",
+      taxDeductible:
+        "All donations are tax-deductible. We maintain transparency with detailed impact reports.",
     },
     footer: {
-      about: "Supporting victims of crisis, terrorism, and displacement in Nigeria",
+      about:
+        "Supporting victims of crisis, terrorism, and displacement in Nigeria",
       quickLinks: "Quick Links",
       getInvolved: "Get Involved",
       stayUpdated: "Stay Updated",
-      newsletter: "Subscribe to our newsletter for impact updates and emergency alerts",
+      newsletter:
+        "Subscribe to our newsletter for impact updates and emergency alerts",
       subscribe: "Subscribe",
       copyright: "All rights reserved.",
       privacy: "Privacy Policy",
@@ -124,15 +138,18 @@ export const translations: Record<Language, Translations> = {
     },
     quickLinks: {
       crisisUpdates: "Sabuwar Wahala",
-      crisisDesc: "Fahimtar girma da ta wahala ta aji da lokace-lokaciyar kasuar",
+      crisisDesc:
+        "Fahimtar girma da ta wahala ta aji da lokace-lokaciyar kasuar",
       impactStories: "Sakamakon Aiki",
-      storiesDesc: "Karatu labarin jiya-jiya na canja wasika ta hanyar aiki na alheri",
+      storiesDesc:
+        "Karatu labarin jiya-jiya na canja wasika ta hanyar aiki na alheri",
       campaigns: "Yakin Yanzu",
       campaignsDesc: "Shiga yakin mu kuma karu tasiri a jihoye yanzu",
     },
     programs: {
       title: "Ayyuka Masu Ceza Rai",
-      description: "Mun kira mafi mahimmancin bukatarun dangi da kasua mai tausayin hankali",
+      description:
+        "Mun kira mafi mahimmancin bukatarun dangi da kasua mai tausayin hankali",
       foodRelief: "Saida Abinci",
       foodDesc: "Tiyata dake mutuwar ganye ba da abinci masu gidi",
       cleanWater: "Ruwa Mai Tsarki",
@@ -150,12 +167,14 @@ export const translations: Record<Language, Translations> = {
     },
     impact: {
       title: "Labarin Sakamakon Aiki Na Jiya",
-      description: "Labarin ziya, karfi, da canja wasika daga dangi da muka taimaka",
+      description:
+        "Labarin ziya, karfi, da canja wasika daga dangi da muka taimaka",
       readFullStory: "Karanta Labarin Gaida",
     },
     support: {
       title: "Hanyoyin Yin Tallafin Mu",
-      description: "Kowane bayarwa, duk da girma, yana sauya rayuwa kuma kasada bada niyya",
+      description:
+        "Kowane bayarwa, duk da girma, yana sauya rayuwa kuma kasada bada niyya",
       sponsorChild: "Tallafin Yaro",
       sponsorChildDesc: "Gosawa ilimin yaro kuma lafiya tsawon shekara",
       sponsorFamily: "Tallafin Dangi",
@@ -172,10 +191,12 @@ export const translations: Record<Language, Translations> = {
         "Mutaje da suka jillinma suna jira tallafi. Tare da ku, mun saida abinci, gida, lafiya, da niyya.",
       donateNow: "Bayarwa Yanzu",
       joinVolunteer: "Shiga Aiki Gwada",
-      taxDeductible: "Bayarwa duk ba da haraji. Mun nuna kasua ta fili da rajistu.",
+      taxDeductible:
+        "Bayarwa duk ba da haraji. Mun nuna kasua ta fili da rajistu.",
     },
     footer: {
-      about: "Ina samun masu jillinma ta wahala, ketare, da jillinma a Nijeriya",
+      about:
+        "Ina samun masu jillinma ta wahala, ketare, da jillinma a Nijeriya",
       quickLinks: "Hanyoyin Sauri",
       getInvolved: "Shiga",
       stayUpdated: "Ci Sabuwar Labari",
@@ -240,7 +261,8 @@ export const translations: Record<Language, Translations> = {
     },
     impact: {
       title: "Akikọ Ise Aye Ti O Kọja",
-      description: "Akikọ ti o je aye, agbara, ati yiyipada lati awon ti a tun se",
+      description:
+        "Akikọ ti o je aye, agbara, ati yiyipada lati awon ti a tun se",
       readFullStory: "Ka Akikọ Gbogbo",
     },
     support: {
@@ -262,7 +284,8 @@ export const translations: Record<Language, Translations> = {
         "Awon ebi ti alomulo ara niran akunnu. Pẹlu e, a fun onje, ile, lai arun, ati ireti.",
       donateNow: "Fun Owo Ni Bayi",
       joinVolunteer: "Darapomo Bi Olumulo Ara",
-      taxDeductible: "Gbogbo owo ko na owun. A fihun imole yi bayi pelu akiyesi iye.",
+      taxDeductible:
+        "Gbogbo owo ko na owun. A fihun imole yi bayi pelu akiyesi iye.",
     },
     footer: {
       about: "Itepin ni awon ti o ba inu, ibajida, ati alomulo ara ni Nigeria",
@@ -352,10 +375,12 @@ export const translations: Record<Language, Translations> = {
         "Ezinaụlọ dị otu nde na-echere mmeghachị. Nke na g���, anyị na-enye nri, ụlọ, ọgwụ, na obi ụtọ.",
       donateNow: "Nye Ego Ugbu a",
       joinVolunteer: "Sonyere Dị ka Volontiali",
-      taxDeductible: "Ego niile aghọtaghị ụtụ. Anyị na-egosi ihe niile n'ụzọ doro anya.",
+      taxDeductible:
+        "Ego niile aghọtaghị ụtụ. Anyị na-egosi ihe niile n'ụzọ doro anya.",
     },
     footer: {
-      about: "Inyere ndị okwu agha, okwu gba, na ndị nkụda ala aka n'ụzọ anu na Nigeria",
+      about:
+        "Inyere ndị okwu agha, okwu gba, na ndị nkụda ala aka n'ụzọ anu na Nigeria",
       quickLinks: "Njikọ Mwereanya",
       getInvolved: "Sonyere",
       stayUpdated: "Na-amụ Akụkọ Ọhụụ",
