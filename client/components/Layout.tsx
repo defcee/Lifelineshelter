@@ -1,0 +1,210 @@
+import { ReactNode } from "react";
+import { Link } from "react-router-dom";
+import { Heart, Menu, X } from "lucide-react";
+import { useState } from "react";
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export const Layout = ({ children }: LayoutProps) => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "About Us", href: "/about" },
+    { label: "The Crisis", href: "/crisis" },
+    { label: "Our Programs", href: "/programs" },
+    { label: "Get Involved", href: "/get-involved" },
+    { label: "Support Us", href: "/support" },
+    { label: "Impact Stories", href: "/impact" },
+    { label: "Contact", href: "/contact" },
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen bg-white">
+      {/* Header/Navigation */}
+      <header className="sticky top-0 z-50 bg-white border-b border-lifeline-sand">
+        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+            <div className="w-10 h-10 bg-gradient-to-br from-lifeline-blue to-blue-600 rounded-full flex items-center justify-center">
+              <Heart className="w-6 h-6 text-white fill-white" />
+            </div>
+            <span className="font-bold text-xl text-lifeline-blue hidden sm:inline">
+              LifeLine Shelter
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-lifeline-earth hover:text-lifeline-blue transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop CTA Buttons */}
+          <div className="hidden lg:flex gap-3">
+            <button className="px-4 py-2 rounded-lg border border-lifeline-blue text-lifeline-blue font-medium hover:bg-lifeline-blue hover:text-white transition-colors">
+              Volunteer
+            </button>
+            <button className="px-4 py-2 rounded-lg bg-lifeline-blue text-white font-medium hover:bg-blue-700 transition-colors">
+              Donate
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-lifeline-earth" />
+            ) : (
+              <Menu className="w-6 h-6 text-lifeline-earth" />
+            )}
+          </button>
+        </nav>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden border-t border-lifeline-sand bg-white">
+            <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-sm font-medium text-lifeline-earth hover:text-lifeline-blue transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="flex gap-3 pt-4 border-t border-lifeline-sand">
+                <button className="flex-1 px-4 py-2 rounded-lg border border-lifeline-blue text-lifeline-blue font-medium hover:bg-lifeline-blue hover:text-white transition-colors">
+                  Volunteer
+                </button>
+                <button className="flex-1 px-4 py-2 rounded-lg bg-lifeline-blue text-white font-medium hover:bg-blue-700 transition-colors">
+                  Donate
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-1">{children}</main>
+
+      {/* Footer */}
+      <footer className="bg-lifeline-earth text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Brand */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 bg-lifeline-blue rounded-full flex items-center justify-center">
+                  <Heart className="w-5 h-5 text-white fill-white" />
+                </div>
+                <span className="font-bold">LifeLine Shelter</span>
+              </div>
+              <p className="text-sm text-gray-200">
+                Supporting victims of crisis, terrorism, and displacement in Nigeria
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="font-bold mb-4">Quick Links</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/about" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/programs" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                    Our Programs
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/impact" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                    Impact Stories
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Get Involved */}
+            <div>
+              <h3 className="font-bold mb-4">Get Involved</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link to="/get-involved" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                    Volunteer
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/support" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                    Donate
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/crisis" className="text-gray-200 hover:text-lifeline-blue transition-colors">
+                    Crisis Updates
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Social & Newsletter */}
+            <div>
+              <h3 className="font-bold mb-4">Stay Updated</h3>
+              <p className="text-sm text-gray-200 mb-4">
+                Subscribe to our newsletter for impact updates and emergency alerts
+              </p>
+              <input
+                type="email"
+                placeholder="Your email"
+                className="w-full px-3 py-2 rounded-lg text-lifeline-earth text-sm mb-2"
+              />
+              <button className="w-full px-3 py-2 rounded-lg bg-lifeline-blue text-white font-medium text-sm hover:bg-blue-700 transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-lifeline-earth-opacity-20 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-200">
+              <p>&copy; 2024 LifeLine Shelter. All rights reserved.</p>
+              <div className="flex gap-6 mt-4 md:mt-0">
+                <a href="#" className="hover:text-lifeline-blue transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="#" className="hover:text-lifeline-blue transition-colors">
+                  Terms of Service
+                </a>
+                <a href="#" className="hover:text-lifeline-blue transition-colors">
+                  Accessibility
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
