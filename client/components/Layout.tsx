@@ -60,13 +60,44 @@ export const Layout = ({ children }: LayoutProps) => {
             ))}
           </div>
 
-          {/* Desktop CTA Buttons */}
-          <div className="hidden lg:flex gap-3">
+          {/* Desktop Language Selector & CTA Buttons */}
+          <div className="hidden lg:flex gap-3 items-center">
+            {/* Language Selector */}
+            <div className="relative">
+              <button
+                onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+                className="px-3 py-2 rounded-lg border border-lifeline-sand text-lifeline-earth font-medium hover:bg-lifeline-sand hover:bg-opacity-30 transition-colors flex items-center gap-2"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm">{language.toUpperCase()}</span>
+              </button>
+
+              {languageMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 bg-white border border-lifeline-sand rounded-lg shadow-lg z-50">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setLanguageMenuOpen(false);
+                      }}
+                      className={`block w-full text-left px-4 py-2 hover:bg-lifeline-sand hover:bg-opacity-20 transition-colors ${
+                        language === lang.code ? "bg-lifeline-blue text-white" : "text-lifeline-earth"
+                      }`}
+                    >
+                      <span className="mr-2">{lang.flag}</span>
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <button className="px-4 py-2 rounded-lg border border-lifeline-blue text-lifeline-blue font-medium hover:bg-lifeline-blue hover:text-white transition-colors">
-              Volunteer
+              {t("nav.volunteer")}
             </button>
             <button className="px-4 py-2 rounded-lg bg-lifeline-blue text-white font-medium hover:bg-blue-700 transition-colors">
-              Donate
+              {t("nav.donate")}
             </button>
           </div>
 
