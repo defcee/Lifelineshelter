@@ -255,16 +255,16 @@ export const Layout = ({ children }: LayoutProps) => {
           {/* Bottom Bar */}
           <div className="border-t border-lifeline-earth-opacity-20 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-200">
-              <p>&copy; 2024 LifeLine Shelter. All rights reserved.</p>
+              <p>&copy; 2024 LifeLine Shelter. {t("footer.copyright")}</p>
               <div className="flex gap-6 mt-4 md:mt-0">
                 <a href="#" className="hover:text-lifeline-blue transition-colors">
-                  Privacy Policy
+                  {t("footer.privacy")}
                 </a>
                 <a href="#" className="hover:text-lifeline-blue transition-colors">
-                  Terms of Service
+                  {t("footer.terms")}
                 </a>
                 <a href="#" className="hover:text-lifeline-blue transition-colors">
-                  Accessibility
+                  {t("footer.accessibility")}
                 </a>
               </div>
             </div>
