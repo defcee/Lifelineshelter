@@ -6,20 +6,20 @@ import { Heart, Users, Droplets, Stethoscope, BookOpen, Brain, MapPin, TrendingU
 const Index = () => {
   const heroCarouselImages = [
     {
-      src: "https://images.pexels.com/photos/10613996/pexels-photo-10613996.jpeg",
-      alt: "Woman in refugee camp - hope and resilience",
+      src: "https://images.pexels.com/photos/30415852/pexels-photo-30415852.jpeg",
+      alt: "Community gathered in Borno, Nigeria - resilience and togetherness",
+    },
+    {
+      src: "https://images.pexels.com/photos/17067103/pexels-photo-17067103.jpeg",
+      alt: "Families at refugee camp in Northern Nigeria - IDPs in temporary shelter",
+    },
+    {
+      src: "https://images.pexels.com/photos/8061687/pexels-photo-8061687.jpeg",
+      alt: "Volunteer holding baby at Lagos Food Bank - compassionate care for vulnerable children",
     },
     {
       src: "https://images.pexels.com/photos/27962039/pexels-photo-27962039.jpeg",
-      alt: "Children at temporary tent camp - post-disaster resilience",
-    },
-    {
-      src: "https://images.pexels.com/photos/6647176/pexels-photo-6647176.jpeg",
-      alt: "Volunteers unloading humanitarian aid supplies",
-    },
-    {
-      src: "https://images.pexels.com/photos/7551597/pexels-photo-7551597.jpeg",
-      alt: "Community support and care in action",
+      alt: "Children at temporary tent camp in Northern Nigeria - hope amid crisis",
     },
   ];
 
