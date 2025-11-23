@@ -72,13 +72,12 @@ const Index = () => {
               </div>
             </div>
 
-            {/* Right: Hero Image Placeholder */}
+            {/* Right: Hero Image Carousel */}
             <div className="relative h-96 md:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl animate-slide-up">
-              <div className="absolute inset-0 bg-gradient-to-t from-lifeline-blue to-transparent opacity-30 z-10"></div>
-              <img
-                src="https://images.unsplash.com/photo-1469026238294-daf406ff8410?w=800&q=80"
-                alt="Families receiving aid and support"
-                className="w-full h-full object-cover"
+              <ImageCarousel
+                images={heroCarouselImages}
+                autoPlayInterval={5000}
+                className="h-full"
               />
             </div>
           </div>
