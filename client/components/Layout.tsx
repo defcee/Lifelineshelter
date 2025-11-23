@@ -247,7 +247,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 className="w-full px-3 py-2 rounded-lg text-lifeline-earth text-sm mb-2"
               />
               <button className="w-full px-3 py-2 rounded-lg bg-lifeline-blue text-white font-medium text-sm hover:bg-blue-700 transition-colors">
-                Subscribe
+                {t("footer.subscribe")}
               </button>
             </div>
           </div>
