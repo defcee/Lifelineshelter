@@ -129,12 +129,36 @@ export const Layout = ({ children }: LayoutProps) => {
                   {link.label}
                 </Link>
               ))}
+
+              {/* Mobile Language Selector */}
+              <div className="pt-4 border-t border-lifeline-sand">
+                <p className="text-sm font-semibold text-lifeline-earth mb-3">Language / Harshe</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setLanguageMenuOpen(false);
+                      }}
+                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                        language === lang.code
+                          ? "bg-lifeline-blue text-white"
+                          : "border border-lifeline-sand text-lifeline-earth hover:bg-lifeline-sand hover:bg-opacity-20"
+                      }`}
+                    >
+                      {lang.flag} {lang.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex gap-3 pt-4 border-t border-lifeline-sand">
                 <button className="flex-1 px-4 py-2 rounded-lg border border-lifeline-blue text-lifeline-blue font-medium hover:bg-lifeline-blue hover:text-white transition-colors">
-                  Volunteer
+                  {t("nav.volunteer")}
                 </button>
                 <button className="flex-1 px-4 py-2 rounded-lg bg-lifeline-blue text-white font-medium hover:bg-blue-700 transition-colors">
-                  Donate
+                  {t("nav.donate")}
                 </button>
               </div>
             </div>
