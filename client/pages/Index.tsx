@@ -1,8 +1,28 @@
 import { Layout } from "@/components/Layout";
+import { ImageCarousel } from "@/components/ImageCarousel";
 import { Link } from "react-router-dom";
 import { Heart, Users, Droplets, Stethoscope, BookOpen, Brain, MapPin, TrendingUp, ArrowRight } from "lucide-react";
 
 const Index = () => {
+  const heroCarouselImages = [
+    {
+      src: "https://images.pexels.com/photos/10613996/pexels-photo-10613996.jpeg",
+      alt: "Woman in refugee camp - hope and resilience",
+    },
+    {
+      src: "https://images.pexels.com/photos/27962039/pexels-photo-27962039.jpeg",
+      alt: "Children at temporary tent camp - post-disaster resilience",
+    },
+    {
+      src: "https://images.pexels.com/photos/6647176/pexels-photo-6647176.jpeg",
+      alt: "Volunteers unloading humanitarian aid supplies",
+    },
+    {
+      src: "https://images.pexels.com/photos/7551597/pexels-photo-7551597.jpeg",
+      alt: "Community support and care in action",
+    },
+  ];
+
   return (
     <Layout>
       {/* Hero Section */}
