@@ -130,6 +130,153 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Crisis & News Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">Latest Crisis Updates</h2>
+            <p className="text-lg text-gray-600">
+              Real-time updates on the humanitarian crisis in northern Nigeria
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* News Item 1 */}
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-red-100">
+              <div className="h-48 bg-gradient-to-r from-red-500 to-orange-600 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/27962039/pexels-photo-27962039.jpeg"
+                  alt="Affected communities in northern Nigeria"
+                  className="w-full h-full object-cover opacity-80"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-100 px-3 py-1 rounded-full">
+                    🚨 Urgent
+                  </span>
+                  <span className="text-xs text-gray-500">2 days ago</span>
+                </div>
+                <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                  Escalating Crisis in Borno State
+                </h3>
+                <p className="text-gray-700 text-sm mb-4">
+                  Over 50,000 newly displaced persons reported in Maiduguri and surrounding areas following security incidents. Our emergency response teams are on the ground providing immediate aid.
+                </p>
+                <Link
+                  to="/crisis"
+                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                >
+                  Read Full Report <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* News Item 2 */}
+            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-yellow-100">
+              <div className="h-48 bg-gradient-to-r from-yellow-500 to-amber-600 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/6647176/pexels-photo-6647176.jpeg"
+                  alt="Humanitarian aid distribution"
+                  className="w-full h-full object-cover opacity-80"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-100 px-3 py-1 rounded-full">
+                    📰 Update
+                  </span>
+                  <span className="text-xs text-gray-500">1 week ago</span>
+                </div>
+                <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                  Emergency Food Distribution Campaign
+                </h3>
+                <p className="text-gray-700 text-sm mb-4">
+                  LifeLine Shelter distributed food packages to 15,000 families across 8 displaced communities. This initiative provided emergency sustenance to vulnerable populations in Adamawa State.
+                </p>
+                <Link
+                  to="/impact"
+                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                >
+                  View Impact Report <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* News Item 3 */}
+            <div className="bg-gradient-to-br from-green-50 to-teal-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-green-100">
+              <div className="h-48 bg-gradient-to-r from-green-500 to-teal-600 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/10613996/pexels-photo-10613996.jpeg"
+                  alt="Water access initiative"
+                  className="w-full h-full object-cover opacity-80"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-green-600 bg-green-100 px-3 py-1 rounded-full">
+                    ✅ Completed
+                  </span>
+                  <span className="text-xs text-gray-500">3 weeks ago</span>
+                </div>
+                <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                  Clean Water Access Project Success
+                </h3>
+                <p className="text-gray-700 text-sm mb-4">
+                  Successfully installed 12 water boreholes in IDPs camps across Yobe State, providing clean water access to 25,000 individuals. A critical step in disease prevention and community health.
+                </p>
+                <Link
+                  to="/programs"
+                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                >
+                  Learn About Programs <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+
+            {/* News Item 4 */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-blue-100">
+              <div className="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 relative overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/7551597/pexels-photo-7551597.jpeg"
+                  alt="Healthcare services delivery"
+                  className="w-full h-full object-cover opacity-80"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                    🏥 Initiative
+                  </span>
+                  <span className="text-xs text-gray-500">5 days ago</span>
+                </div>
+                <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                  Mobile Healthcare Clinics Active
+                </h3>
+                <p className="text-gray-700 text-sm mb-4">
+                  Our mobile healthcare teams have conducted 3,200 medical consultations across 6 IDP camps. Free vaccinations, maternal care, and emergency medical services continue daily.
+                </p>
+                <Link
+                  to="/programs"
+                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                >
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link
+              to="/crisis"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-lifeline-blue text-lifeline-blue font-bold hover:bg-lifeline-blue hover:text-white transition-colors"
+            >
+              View All Crisis Updates <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Our Programs Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4">
