@@ -611,20 +611,29 @@ const Index = () => {
             {/* Mental Health */}
             <Link
               to="/programs"
-              className="bg-gradient-to-br from-purple-500 to-purple-600 text-white p-8 rounded-xl border border-purple-300 hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer"
+              className="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-xl border border-purple-300 hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer overflow-hidden flex flex-col h-full"
             >
-              <div className="w-12 h-12 bg-white bg-opacity-30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Brain className="w-6 h-6 text-white" />
+              <div className="h-40 w-full overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/5711236/pexels-photo-5711236.jpeg"
+                  alt="Mental health support and counseling"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Mental Health Support
-              </h3>
-              <p className="text-purple-100 text-sm mb-4">
-                Trauma counseling and community healing activities for
-                psychological recovery
-              </p>
-              <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                Learn More <ArrowRight className="w-4 h-4" />
+              <div className="p-8 flex-1 flex flex-col">
+                <div className="w-12 h-12 bg-white bg-opacity-30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Brain className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Mental Health Support
+                </h3>
+                <p className="text-purple-100 text-sm mb-4 flex-1">
+                  Trauma counseling and community healing activities for
+                  psychological recovery
+                </p>
+                <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </div>
               </div>
             </Link>
 
