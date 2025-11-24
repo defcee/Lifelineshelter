@@ -553,20 +553,29 @@ const Index = () => {
             {/* Healthcare */}
             <Link
               to="/programs"
-              className="bg-gradient-to-br from-red-500 to-red-600 text-white p-8 rounded-xl border border-red-300 hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer"
+              className="bg-gradient-to-br from-red-500 to-red-600 text-white rounded-xl border border-red-300 hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer overflow-hidden flex flex-col h-full"
             >
-              <div className="w-12 h-12 bg-white bg-opacity-30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Stethoscope className="w-6 h-6 text-white" />
+              <div className="h-40 w-full overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/8061688/pexels-photo-8061688.jpeg"
+                  alt="Healthcare services and medical support"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Healthcare Services
-              </h3>
-              <p className="text-red-100 text-sm mb-4">
-                Mobile clinics providing vaccinations, maternal care, and
-                emergency medical aid
-              </p>
-              <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                Learn More <ArrowRight className="w-4 h-4" />
+              <div className="p-8 flex-1 flex flex-col">
+                <div className="w-12 h-12 bg-white bg-opacity-30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <Stethoscope className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Healthcare Services
+                </h3>
+                <p className="text-red-100 text-sm mb-4 flex-1">
+                  Mobile clinics providing vaccinations, maternal care, and
+                  emergency medical aid
+                </p>
+                <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </div>
               </div>
             </Link>
 
