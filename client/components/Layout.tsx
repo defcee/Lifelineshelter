@@ -253,7 +253,9 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Quick Links */}
             <div>
-              <h3 className="font-bold text-base mb-4">{t("footer.quickLinks")}</h3>
+              <h3 className="font-bold text-base mb-4">
+                {t("footer.quickLinks")}
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <Link
@@ -292,7 +294,9 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Get Involved */}
             <div>
-              <h3 className="font-bold text-base mb-4">{t("footer.getInvolved")}</h3>
+              <h3 className="font-bold text-base mb-4">
+                {t("footer.getInvolved")}
+              </h3>
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <Link
@@ -323,7 +327,9 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Newsletter */}
             <div>
-              <h3 className="font-bold text-base mb-4">{t("footer.stayUpdated")}</h3>
+              <h3 className="font-bold text-base mb-4">
+                {t("footer.stayUpdated")}
+              </h3>
               <p className="text-sm text-gray-200 mb-4 leading-relaxed">
                 {t("footer.newsletter")}
               </p>

@@ -120,15 +120,21 @@ const Index = () => {
             >
               <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-20 transition-all">
                 <p className="text-2xl md:text-3xl font-bold">2.9M+</p>
-                <p className="text-xs md:text-sm text-blue-100">Internally Displaced</p>
+                <p className="text-xs md:text-sm text-blue-100">
+                  Internally Displaced
+                </p>
               </div>
               <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-20 transition-all">
                 <p className="text-2xl md:text-3xl font-bold">50K+</p>
-                <p className="text-xs md:text-sm text-blue-100">Families Helped</p>
+                <p className="text-xs md:text-sm text-blue-100">
+                  Families Helped
+                </p>
               </div>
               <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-20 transition-all">
                 <p className="text-2xl md:text-3xl font-bold">25+</p>
-                <p className="text-xs md:text-sm text-blue-100">Active Programs</p>
+                <p className="text-xs md:text-sm text-blue-100">
+                  Active Programs
+                </p>
               </div>
             </div>
           </div>
@@ -512,8 +518,8 @@ const Index = () => {
                   Food Relief
                 </h3>
                 <p className="text-orange-100 text-sm mb-4 flex-1">
-                  Ensuring vulnerable families have access to nutritious meals and
-                  food security
+                  Ensuring vulnerable families have access to nutritious meals
+                  and food security
                 </p>
                 <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                   Learn More <ArrowRight className="w-4 h-4" />
@@ -599,8 +605,8 @@ const Index = () => {
                   Education Programs
                 </h3>
                 <p className="text-green-100 text-sm mb-4 flex-1">
-                  Creating safe learning spaces and providing educational supplies
-                  for displaced children
+                  Creating safe learning spaces and providing educational
+                  supplies for displaced children
                 </p>
                 <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                   Learn More <ArrowRight className="w-4 h-4" />
