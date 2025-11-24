@@ -535,19 +535,19 @@ const Index = () => {
             {/* Healthcare */}
             <Link
               to="/programs"
-              className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-xl border border-red-200 hover:shadow-lg transition-shadow group cursor-pointer"
+              className="bg-gradient-to-br from-red-500 to-red-600 text-white p-8 rounded-xl border border-red-300 hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer"
             >
-              <div className="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 bg-white bg-opacity-30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Stethoscope className="w-6 h-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+              <h3 className="text-xl font-bold text-white mb-3">
                 Healthcare Services
               </h3>
-              <p className="text-gray-700 text-sm mb-4">
+              <p className="text-red-100 text-sm mb-4">
                 Mobile clinics providing vaccinations, maternal care, and
                 emergency medical aid
               </p>
-              <div className="text-lifeline-blue font-semibold text-sm flex items-center gap-2">
+              <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                 Learn More <ArrowRight className="w-4 h-4" />
               </div>
             </Link>
