@@ -347,25 +347,27 @@ const Index = () => {
             </div>
 
             {/* News Item 2 */}
-            <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-yellow-100">
-              <div className="h-48 bg-gradient-to-r from-yellow-500 to-amber-600 relative overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/6647176/pexels-photo-6647176.jpeg"
-                  alt="Humanitarian aid distribution"
-                  className="w-full h-full object-cover opacity-80"
-                />
+            <div className="group relative h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white">
+              <img
+                src="https://images.pexels.com/photos/6647176/pexels-photo-6647176.jpeg"
+                alt="Humanitarian aid distribution"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute top-6 right-6 z-20 p-3 rounded-full bg-white bg-opacity-20 backdrop-blur-sm group-hover:bg-amber-500 group-hover:bg-opacity-90 transition-all duration-300">
+                <Droplets className="w-6 h-6 text-white" />
               </div>
-              <div className="p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-bold uppercase tracking-wider text-amber-600 bg-amber-100 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold uppercase tracking-wider text-amber-300 bg-amber-600 bg-opacity-80 px-3 py-1 rounded-full">
                     📰 Update
                   </span>
-                  <span className="text-xs text-gray-500">1 week ago</span>
+                  <span className="text-xs text-gray-300">1 week ago</span>
                 </div>
-                <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
                   Emergency Food Distribution Campaign
                 </h3>
-                <p className="text-gray-700 text-sm mb-4">
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
                   LifeLine Shelter distributed food packages to 15,000 families
                   across 8 displaced communities. This initiative provided
                   emergency sustenance to vulnerable populations in Adamawa
@@ -373,7 +375,7 @@ const Index = () => {
                 </p>
                 <Link
                   to="/impact"
-                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                  className="text-white font-semibold text-sm hover:text-amber-300 flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
                 >
                   View Impact Report <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -714,7 +716,7 @@ const Index = () => {
             {/* Sponsor Family */}
             <div className="bg-gradient-to-b from-lifeline-green to-green-600 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
-                👨‍���‍👧‍👦
+                👨‍👩‍👧‍👦
               </div>
               <h3 className="text-lg font-bold mb-3">Sponsor a Family</h3>
               <p className="text-sm text-green-100 mb-6">
@@ -738,7 +740,7 @@ const Index = () => {
             {/* One-Time Donation */}
             <div className="bg-gradient-to-b from-purple-500 to-purple-700 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
-                ❤���
+                ❤️
               </div>
               <h3 className="text-lg font-bold mb-3">One-Time Gift</h3>
               <p className="text-sm text-purple-100 mb-6">
