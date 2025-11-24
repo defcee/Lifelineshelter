@@ -466,13 +466,26 @@ const Index = () => {
       </section>
 
       {/* Our Programs Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Full-width background image */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/6317433/pexels-photo-6317433.jpeg')",
+          }}
+        ></div>
+
+        {/* Dark translucent overlay */}
+        <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our Life-Saving Programs
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-100">
               We address the most urgent needs of displaced families with
               comprehensive, compassionate care
             </p>
