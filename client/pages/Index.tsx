@@ -419,32 +419,34 @@ const Index = () => {
             </div>
 
             {/* News Item 4 */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-blue-100">
-              <div className="h-48 bg-gradient-to-r from-blue-500 to-indigo-600 relative overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/7551597/pexels-photo-7551597.jpeg"
-                  alt="Healthcare services delivery"
-                  className="w-full h-full object-cover opacity-80"
-                />
+            <div className="group relative h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white">
+              <img
+                src="https://images.pexels.com/photos/7551597/pexels-photo-7551597.jpeg"
+                alt="Healthcare services delivery"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute top-6 right-6 z-20 p-3 rounded-full bg-white bg-opacity-20 backdrop-blur-sm group-hover:bg-blue-600 group-hover:bg-opacity-90 transition-all duration-300">
+                <Stethoscope className="w-6 h-6 text-white" />
               </div>
-              <div className="p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold uppercase tracking-wider text-blue-300 bg-blue-600 bg-opacity-80 px-3 py-1 rounded-full">
                     🏥 Initiative
                   </span>
-                  <span className="text-xs text-gray-500">5 days ago</span>
+                  <span className="text-xs text-gray-300">5 days ago</span>
                 </div>
-                <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
                   Mobile Healthcare Clinics Active
                 </h3>
-                <p className="text-gray-700 text-sm mb-4">
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
                   Our mobile healthcare teams have conducted 3,200 medical
                   consultations across 6 IDP camps. Free vaccinations, maternal
                   care, and emergency medical services continue daily.
                 </p>
                 <Link
                   to="/programs"
-                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                  className="text-white font-semibold text-sm hover:text-blue-300 flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
                 >
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
