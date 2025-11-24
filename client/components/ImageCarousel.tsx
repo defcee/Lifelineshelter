@@ -79,8 +79,8 @@ export const ImageCarousel = ({
         ))}
       </div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-30 pointer-events-none"></div>
+      {/* Blue semi-transparent overlay */}
+      <div className="absolute inset-0 bg-blue-600 opacity-35 pointer-events-none"></div>
 
       {/* Previous button */}
       <button
