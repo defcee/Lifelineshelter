@@ -616,7 +616,7 @@ const Index = () => {
           <div className="mt-12 text-center">
             <Link
               to="/programs"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-lifeline-blue text-white font-bold hover:bg-blue-700 transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-black transition-colors"
             >
               Explore All Programs <ArrowRight className="w-5 h-5" />
             </Link>
@@ -733,7 +733,7 @@ const Index = () => {
             {/* Sponsor Family */}
             <div className="bg-gradient-to-b from-lifeline-green to-green-600 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
-                👨‍����‍👧‍👦
+                👨‍👩‍👧‍👦
               </div>
               <h3 className="text-lg font-bold mb-3">Sponsor a Family</h3>
               <p className="text-sm text-green-100 mb-6">
