@@ -312,32 +312,34 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* News Item 1 */}
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-red-100">
-              <div className="h-48 bg-gradient-to-r from-red-500 to-orange-600 relative overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/27962039/pexels-photo-27962039.jpeg"
-                  alt="Affected communities in northern Nigeria"
-                  className="w-full h-full object-cover opacity-80"
-                />
+            <div className="group relative h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white">
+              <img
+                src="https://images.pexels.com/photos/27962039/pexels-photo-27962039.jpeg"
+                alt="Affected communities in northern Nigeria"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute top-6 right-6 z-20 p-3 rounded-full bg-white bg-opacity-20 backdrop-blur-sm group-hover:bg-red-600 group-hover:bg-opacity-90 transition-all duration-300">
+                <MapPin className="w-6 h-6 text-white" />
               </div>
-              <div className="p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xs font-bold uppercase tracking-wider text-red-600 bg-red-100 px-3 py-1 rounded-full">
+                  <span className="text-xs font-bold uppercase tracking-wider text-red-300 bg-red-600 bg-opacity-80 px-3 py-1 rounded-full">
                     🚨 Urgent
                   </span>
-                  <span className="text-xs text-gray-500">2 days ago</span>
+                  <span className="text-xs text-gray-300">2 days ago</span>
                 </div>
-                <h3 className="text-xl font-bold text-lifeline-earth mb-3">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-red-300 transition-colors">
                   Escalating Crisis in Borno State
                 </h3>
-                <p className="text-gray-700 text-sm mb-4">
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
                   Over 50,000 newly displaced persons reported in Maiduguri and
                   surrounding areas following security incidents. Our emergency
                   response teams are on the ground providing immediate aid.
                 </p>
                 <Link
                   to="/crisis"
-                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                  className="text-white font-semibold text-sm hover:text-red-300 flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
                 >
                   Read Full Report <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -712,7 +714,7 @@ const Index = () => {
             {/* Sponsor Family */}
             <div className="bg-gradient-to-b from-lifeline-green to-green-600 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
-                👨‍👩‍👧‍👦
+                👨‍���‍👧‍👦
               </div>
               <h3 className="text-lg font-bold mb-3">Sponsor a Family</h3>
               <p className="text-sm text-green-100 mb-6">
@@ -736,7 +738,7 @@ const Index = () => {
             {/* One-Time Donation */}
             <div className="bg-gradient-to-b from-purple-500 to-purple-700 text-white p-8 rounded-xl hover:shadow-lg transition-shadow cursor-pointer group">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform inline-block">
-                ❤️
+                ❤���
               </div>
               <h3 className="text-lg font-bold mb-3">One-Time Gift</h3>
               <p className="text-sm text-purple-100 mb-6">
