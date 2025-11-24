@@ -495,20 +495,29 @@ const Index = () => {
             {/* Food Relief */}
             <Link
               to="/programs"
-              className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 rounded-xl border border-orange-300 hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer"
+              className="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-xl border border-orange-300 hover:shadow-2xl transition-all hover:-translate-y-2 group cursor-pointer overflow-hidden flex flex-col h-full"
             >
-              <div className="w-12 h-12 bg-white bg-opacity-30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <span className="text-2xl">🍽️</span>
+              <div className="h-40 w-full overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/6647176/pexels-photo-6647176.jpeg"
+                  alt="Humanitarian food distribution relief"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Food Relief
-              </h3>
-              <p className="text-orange-100 text-sm mb-4">
-                Ensuring vulnerable families have access to nutritious meals and
-                food security
-              </p>
-              <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                Learn More <ArrowRight className="w-4 h-4" />
+              <div className="p-8 flex-1 flex flex-col">
+                <div className="w-12 h-12 bg-white bg-opacity-30 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-2xl">🍽️</span>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">
+                  Food Relief
+                </h3>
+                <p className="text-orange-100 text-sm mb-4 flex-1">
+                  Ensuring vulnerable families have access to nutritious meals and
+                  food security
+                </p>
+                <div className="text-white font-semibold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </div>
               </div>
             </Link>
 
