@@ -457,7 +457,7 @@ const Index = () => {
           <div className="mt-12 text-center">
             <Link
               to="/crisis"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-lifeline-blue text-lifeline-blue font-bold hover:bg-lifeline-blue hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-black transition-colors"
             >
               View All Crisis Updates <ArrowRight className="w-5 h-5" />
             </Link>
