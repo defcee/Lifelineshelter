@@ -149,56 +149,137 @@ const Index = () => {
         }
       `}</style>
 
-      {/* Quick Links Section */}
-      <section className="py-12 md:py-16 bg-lifeline-sand bg-opacity-30">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {/* Quick Links Section with Background */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Full-width background image */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/6317433/pexels-photo-6317433.jpeg')",
+          }}
+        ></div>
+
+        {/* Dark translucent overlay */}
+        <div className="absolute inset-0 bg-black opacity-40 z-5"></div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Explore Our Work
+            </h2>
+            <p className="text-lg text-gray-100 max-w-2xl mx-auto">
+              Stay informed about the crisis, celebrate impact, and join our
+              campaigns
+            </p>
+          </div>
+
+          {/* Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Crisis Updates Card */}
             <Link
               to="/crisis"
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group cursor-pointer border border-lifeline-sand"
+              className="group relative h-80 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-lifeline-earth">
+              {/* Card Image */}
+              <img
+                src="https://images.pexels.com/photos/15861714/pexels-photo-15861714.jpeg"
+                alt="Crisis Updates - Affected regions and emergency response"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+
+              {/* Dark overlay on card */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-60 group-hover:opacity-70 transition-opacity duration-300"></div>
+
+              {/* Icon */}
+              <div className="absolute top-6 right-6 z-20 p-3 rounded-full bg-white bg-opacity-20 backdrop-blur-sm group-hover:bg-lifeline-blue group-hover:bg-opacity-80 transition-all duration-300">
+                <MapPin className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-lifeline-blue transition-colors">
                   Crisis Updates
                 </h3>
-                <MapPin className="w-6 h-6 text-lifeline-blue group-hover:translate-x-1 transition-transform" />
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  Real-time statistics, affected regions, and emergency response
+                  information
+                </p>
+                <div className="mt-4 flex items-center text-white font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
+                  Learn More <ArrowRight className="w-4 h-4 ml-2" />
+                </div>
               </div>
-              <p className="text-gray-600 text-sm">
-                Understand the scale of the crisis with real-time statistics and
-                affected regions
-              </p>
             </Link>
 
+            {/* Impact Stories Card */}
             <Link
               to="/impact"
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group cursor-pointer border border-lifeline-sand"
+              className="group relative h-80 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-lifeline-earth">
+              {/* Card Image */}
+              <img
+                src="https://images.pexels.com/photos/6646870/pexels-photo-6646870.jpeg"
+                alt="Impact Stories - Lives transformed through humanitarian efforts"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+
+              {/* Dark overlay on card */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-60 group-hover:opacity-70 transition-opacity duration-300"></div>
+
+              {/* Icon */}
+              <div className="absolute top-6 right-6 z-20 p-3 rounded-full bg-white bg-opacity-20 backdrop-blur-sm group-hover:bg-lifeline-green group-hover:bg-opacity-80 transition-all duration-300">
+                <TrendingUp className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-lifeline-green transition-colors">
                   Impact Stories
                 </h3>
-                <TrendingUp className="w-6 h-6 text-lifeline-green group-hover:translate-x-1 transition-transform" />
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  Inspiring stories of families helped, communities rebuilt, and
+                  lives transformed
+                </p>
+                <div className="mt-4 flex items-center text-white font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
+                  Read Stories <ArrowRight className="w-4 h-4 ml-2" />
+                </div>
               </div>
-              <p className="text-gray-600 text-sm">
-                Read inspiring stories of lives transformed through our
-                humanitarian efforts
-              </p>
             </Link>
 
+            {/* Current Campaigns Card */}
             <Link
               to="/get-involved"
-              className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all group cursor-pointer border border-lifeline-sand"
+              className="group relative h-80 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-bold text-lifeline-earth">
+              {/* Card Image */}
+              <img
+                src="https://images.pexels.com/photos/8377428/pexels-photo-8377428.jpeg"
+                alt="Current Campaigns - Join active fundraising and advocacy campaigns"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+
+              {/* Dark overlay on card */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-60 group-hover:opacity-70 transition-opacity duration-300"></div>
+
+              {/* Icon */}
+              <div className="absolute top-6 right-6 z-20 p-3 rounded-full bg-white bg-opacity-20 backdrop-blur-sm group-hover:bg-lifeline-warm group-hover:bg-opacity-80 transition-all duration-300">
+                <Heart className="w-6 h-6 text-white" />
+              </div>
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-8 z-20">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-lifeline-warm transition-colors">
                   Current Campaigns
                 </h3>
-                <Heart className="w-6 h-6 text-lifeline-warm group-hover:translate-x-1 transition-transform" />
+                <p className="text-gray-200 text-sm leading-relaxed">
+                  Active fundraising, advocacy initiatives, and volunteer
+                  opportunities
+                </p>
+                <div className="mt-4 flex items-center text-white font-semibold text-sm group-hover:translate-x-2 transition-transform duration-300">
+                  Get Involved <ArrowRight className="w-4 h-4 ml-2" />
+                </div>
               </div>
-              <p className="text-gray-600 text-sm">
-                Join our active campaigns and make a direct impact in
-                communities today
-              </p>
             </Link>
           </div>
         </div>
