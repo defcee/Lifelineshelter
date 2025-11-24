@@ -35,66 +35,119 @@ const Index = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-lifeline-blue via-blue-600 to-blue-700 text-white py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Logo and Headline */}
-            <div className="flex flex-col items-start justify-center">
-              <div className="mb-8 animate-fade-in">
-                <div className="w-24 h-24 bg-white bg-opacity-10 rounded-full flex items-center justify-center mb-6">
-                  <Heart className="w-12 h-12 text-white fill-white" />
-                </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                  Every Life Matters
-                </h1>
-                <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-lg">
-                  LifeLine Shelter stands with the victims of crisis, terrorism,
-                  and displacement in Nigeria. Together, we provide immediate
-                  relief and long-term hope.
-                </p>
-              </div>
+      {/* Hero Section with Full-Width Carousel Background */}
+      <section className="relative w-full text-white py-32 md:py-48 lg:py-56 overflow-hidden">
+        {/* Full-width background carousel */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <ImageCarousel
+            images={heroCarouselImages}
+            autoPlayInterval={5000}
+            className="h-full rounded-none"
+          />
+        </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8">
-                <button className="px-8 py-4 rounded-lg bg-white text-lifeline-blue font-bold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
-                  <Heart className="w-5 h-5" />
-                  Donate Now
-                </button>
-                <button className="px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-lifeline-blue transition-colors flex items-center justify-center gap-2">
-                  <Users className="w-5 h-5" />
-                  Volunteer
-                </button>
-              </div>
+        {/* Dark blue overlay for better text contrast */}
+        <div className="absolute inset-0 bg-blue-900 opacity-40 z-5 pointer-events-none"></div>
 
-              {/* Impact Stats */}
-              <div className="grid grid-cols-3 gap-6 w-full">
-                <div>
-                  <p className="text-3xl font-bold">2.9M+</p>
-                  <p className="text-sm text-blue-100">Internally Displaced</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold">50K+</p>
-                  <p className="text-sm text-blue-100">Families Helped</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold">25+</p>
-                  <p className="text-sm text-blue-100">Active Programs</p>
-                </div>
-              </div>
+        {/* Content container */}
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-2xl">
+            {/* Logo with animation */}
+            <div
+              className="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-8 animate-fade-in"
+              style={{
+                animation: "fadeInUp 0.8s ease-out 0.1s both",
+              }}
+            >
+              <Heart className="w-12 h-12 text-white fill-white" />
             </div>
 
-            {/* Right: Hero Image Carousel */}
-            <div className="relative h-96 md:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl animate-slide-up">
-              <ImageCarousel
-                images={heroCarouselImages}
-                autoPlayInterval={5000}
-                className="h-full"
-              />
+            {/* Main Headline - Line by line animation */}
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight mb-6">
+              <span
+                className="block"
+                style={{
+                  animation: "fadeInUp 0.8s ease-out 0.2s both",
+                }}
+              >
+                Every Life
+              </span>
+              <span
+                className="block"
+                style={{
+                  animation: "fadeInUp 0.8s ease-out 0.4s both",
+                }}
+              >
+                Matters
+              </span>
+            </h1>
+
+            {/* Description - Animated paragraph */}
+            <p
+              className="text-lg md:text-xl text-blue-100 mb-8 max-w-lg leading-relaxed"
+              style={{
+                animation: "fadeInUp 0.8s ease-out 0.6s both",
+              }}
+            >
+              LifeLine Shelter stands with the victims of crisis, terrorism, and
+              displacement in Nigeria. Together, we provide immediate relief and
+              long-term hope.
+            </p>
+
+            {/* CTA Buttons - Staggered animation */}
+            <div
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-12"
+              style={{
+                animation: "fadeInUp 0.8s ease-out 0.8s both",
+              }}
+            >
+              <button className="px-8 py-4 rounded-lg bg-white text-lifeline-blue font-bold hover:bg-blue-50 transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg">
+                <Heart className="w-5 h-5" />
+                Donate Now
+              </button>
+              <button className="px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-lifeline-blue transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg">
+                <Users className="w-5 h-5" />
+                Volunteer
+              </button>
+            </div>
+
+            {/* Impact Stats - Grid animation */}
+            <div
+              className="grid grid-cols-3 gap-4 md:gap-6 w-full"
+              style={{
+                animation: "fadeInUp 0.8s ease-out 1s both",
+              }}
+            >
+              <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-20 transition-all">
+                <p className="text-2xl md:text-3xl font-bold">2.9M+</p>
+                <p className="text-xs md:text-sm text-blue-100">Internally Displaced</p>
+              </div>
+              <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-20 transition-all">
+                <p className="text-2xl md:text-3xl font-bold">50K+</p>
+                <p className="text-xs md:text-sm text-blue-100">Families Helped</p>
+              </div>
+              <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 hover:bg-opacity-20 transition-all">
+                <p className="text-2xl md:text-3xl font-bold">25+</p>
+                <p className="text-xs md:text-sm text-blue-100">Active Programs</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Add CSS animations */}
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
 
       {/* Quick Links Section */}
       <section className="py-12 md:py-16 bg-lifeline-sand bg-opacity-30">
