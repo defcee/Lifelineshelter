@@ -286,18 +286,31 @@ const Index = () => {
       </section>
 
       {/* Crisis & News Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Full-width background image */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/8061687/pexels-photo-8061687.jpeg')",
+          }}
+        ></div>
+
+        {/* Dark translucent overlay */}
+        <div className="absolute inset-0 bg-black opacity-50 z-5"></div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Latest Crisis Updates
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-100">
               Real-time updates on the humanitarian crisis in northern Nigeria
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* News Item 1 */}
             <div className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-red-100">
               <div className="h-48 bg-gradient-to-r from-red-500 to-orange-600 relative overflow-hidden">
