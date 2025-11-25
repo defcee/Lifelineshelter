@@ -135,9 +135,22 @@ const About = () => {
       </section>
 
       {/* Organization Background */}
-      <section className="py-16 md:py-24 bg-lifeline-sand bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-lifeline-earth mb-12 text-center">
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        {/* Full-width background image */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/6317433/pexels-photo-6317433.jpeg')",
+          }}
+        ></div>
+
+        {/* Dark translucent overlay */}
+        <div className="absolute inset-0 bg-black opacity-50 z-5"></div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">
             Our Story
           </h2>
 
