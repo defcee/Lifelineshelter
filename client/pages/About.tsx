@@ -326,8 +326,14 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Team Member 1 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
-              <div className="h-64 bg-gradient-to-br from-lifeline-blue to-blue-600"></div>
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div className="h-64 bg-gradient-to-br from-lifeline-blue to-blue-600 overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/5717642/pexels-photo-5717642.jpeg"
+                  alt="Dr. Amina Hassan, Executive Director"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-lg font-bold text-lifeline-earth mb-1">
                   Dr. Amina Hassan
@@ -343,8 +349,14 @@ const About = () => {
             </div>
 
             {/* Team Member 2 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
-              <div className="h-64 bg-gradient-to-br from-lifeline-green to-green-600"></div>
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div className="h-64 bg-gradient-to-br from-lifeline-green to-green-600 overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/5378700/pexels-photo-5378700.jpeg"
+                  alt="Kunle Okafor, Operations Director"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-lg font-bold text-lifeline-earth mb-1">
                   Kunle Okafor
@@ -360,8 +372,14 @@ const About = () => {
             </div>
 
             {/* Team Member 3 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
-              <div className="h-64 bg-gradient-to-br from-lifeline-warm to-orange-600"></div>
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div className="h-64 bg-gradient-to-br from-lifeline-warm to-orange-600 overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/5717642/pexels-photo-5717642.jpeg"
+                  alt="Chioma Adeyemi, Community Partnerships"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-lg font-bold text-lifeline-earth mb-1">
                   Chioma Adeyemi
