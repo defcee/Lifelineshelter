@@ -804,7 +804,7 @@ const Index = () => {
               <p className="text-sm text-blue-100 mb-6">
                 Support a child's education and wellbeing for a year
               </p>
-              <p className="text-2xl font-bold">$50/mo</p>
+              <p className="text-2xl font-bold">Any Amount</p>
             </div>
 
             {/* Sponsor Family */}
@@ -816,7 +816,7 @@ const Index = () => {
               <p className="text-sm text-green-100 mb-6">
                 Provide food, shelter, and care for an entire family
               </p>
-              <p className="text-2xl font-bold">$150/mo</p>
+              <p className="text-2xl font-bold">Any Amount</p>
             </div>
 
             {/* Community Project */}
