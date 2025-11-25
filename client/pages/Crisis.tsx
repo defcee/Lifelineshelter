@@ -1,6 +1,12 @@
 import { Layout } from "@/components/Layout";
 import { Link } from "react-router-dom";
-import { Users, AlertCircle, TrendingUp, MapPin, ArrowRight } from "lucide-react";
+import {
+  Users,
+  AlertCircle,
+  TrendingUp,
+  MapPin,
+  ArrowRight,
+} from "lucide-react";
 
 const Crisis = () => {
   const crisisStats = [
@@ -87,8 +93,8 @@ const Crisis = () => {
             The Crisis: Understanding the Situation
           </h1>
           <p className="text-lg md:text-xl text-gray-100 max-w-2xl">
-            Real-time statistics, affected regions, and the scale of the humanitarian
-            emergency in Nigeria
+            Real-time statistics, affected regions, and the scale of the
+            humanitarian emergency in Nigeria
           </p>
         </div>
       </section>
@@ -114,7 +120,8 @@ const Crisis = () => {
               The Scale of the Crisis
             </h2>
             <p className="text-lg text-gray-100">
-              Key statistics showing the humanitarian emergency affecting Nigeria
+              Key statistics showing the humanitarian emergency affecting
+              Nigeria
             </p>
           </div>
 
@@ -146,7 +153,8 @@ const Crisis = () => {
               Understanding the Crisis
             </h2>
             <p className="text-lg text-gray-600">
-              Multiple interconnected challenges creating a complex humanitarian emergency
+              Multiple interconnected challenges creating a complex humanitarian
+              emergency
             </p>
           </div>
 
@@ -154,27 +162,33 @@ const Crisis = () => {
             {[
               {
                 ...crisisFactors[0],
-                image: "https://images.pexels.com/photos/34106813/pexels-photo-34106813.jpeg",
+                image:
+                  "https://images.pexels.com/photos/34106813/pexels-photo-34106813.jpeg",
               },
               {
                 ...crisisFactors[1],
-                image: "https://images.pexels.com/photos/17067103/pexels-photo-17067103.jpeg",
+                image:
+                  "https://images.pexels.com/photos/17067103/pexels-photo-17067103.jpeg",
               },
               {
                 ...crisisFactors[2],
-                image: "https://images.pexels.com/photos/32968674/pexels-photo-32968674.jpeg",
+                image:
+                  "https://images.pexels.com/photos/32968674/pexels-photo-32968674.jpeg",
               },
               {
                 ...crisisFactors[3],
-                image: "https://images.pexels.com/photos/4989139/pexels-photo-4989139.jpeg",
+                image:
+                  "https://images.pexels.com/photos/4989139/pexels-photo-4989139.jpeg",
               },
               {
                 ...crisisFactors[4],
-                image: "https://images.pexels.com/photos/2406271/pexels-photo-2406271.jpeg",
+                image:
+                  "https://images.pexels.com/photos/2406271/pexels-photo-2406271.jpeg",
               },
               {
                 ...crisisFactors[5],
-                image: "https://images.pexels.com/photos/5699463/pexels-photo-5699463.jpeg",
+                image:
+                  "https://images.pexels.com/photos/5699463/pexels-photo-5699463.jpeg",
               },
             ].map((factor, index) => (
               <div
@@ -278,8 +292,9 @@ const Crisis = () => {
               How You Can Help
             </h2>
             <p className="text-lg text-gray-600 mb-12">
-              LifeLine Shelter is working to provide immediate relief and long-term support
-              to affected families. Your contribution can save lives.
+              LifeLine Shelter is working to provide immediate relief and
+              long-term support to affected families. Your contribution can save
+              lives.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -33,12 +33,14 @@ A modern, responsive website for LifeLine Shelter, a humanitarian organization p
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/lifelineshelter.git
    cd lifelineshelter
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -46,6 +48,7 @@ A modern, responsive website for LifeLine Shelter, a humanitarian organization p
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    # or
@@ -75,6 +78,7 @@ This guide walks you through deploying the LifeLine Shelter website to cPanel fo
 ### Step 1: Prepare Your Local Build
 
 1. On your local machine, build the production version:
+
    ```bash
    npm run build
    ```
@@ -85,10 +89,13 @@ This guide walks you through deploying the LifeLine Shelter website to cPanel fo
 
 1. Open your terminal/command prompt
 2. Connect to your cPanel server:
+
    ```bash
    ssh yourusername@lifelineshelter.com
    ```
+
    Or if using a specific port:
+
    ```bash
    ssh -p 22 yourusername@lifelineshelter.com
    ```
@@ -98,6 +105,7 @@ This guide walks you through deploying the LifeLine Shelter website to cPanel fo
 ### Step 3: Navigate to Your Public HTML Directory
 
 1. Once connected, navigate to the public_html folder:
+
    ```bash
    cd public_html
    ```
@@ -145,11 +153,13 @@ scp -r * yourusername@lifelineshelter.com:~/public_html/
 React Router requires proper server configuration for client-side routing to work correctly.
 
 1. Via SSH, create/edit `.htaccess` in `public_html`:
+
    ```bash
    nano public_html/.htaccess
    ```
 
 2. Paste the following configuration:
+
    ```apache
    <IfModule mod_rewrite.c>
      RewriteEngine On
@@ -234,7 +244,8 @@ For better performance, enable gzip compression:
 
 ### Issue: Blank page after deployment
 
-**Solution**: 
+**Solution**:
+
 - Check browser console for errors (F12)
 - Verify `.htaccess` is properly configured
 - Clear browser cache (Ctrl+Shift+Delete)
@@ -243,6 +254,7 @@ For better performance, enable gzip compression:
 ### Issue: CSS/Images not loading
 
 **Solution**:
+
 - Ensure file permissions are correct (644 for files, 755 for folders)
 - Check that paths in the built files are correct
 - Verify domain is properly configured in cPanel
@@ -250,6 +262,7 @@ For better performance, enable gzip compression:
 ### Issue: 404 errors on navigation
 
 **Solution**:
+
 - This typically means `.htaccess` routing isn't working
 - Verify `.htaccess` file exists in `public_html`
 - Check that `mod_rewrite` is enabled on your hosting
@@ -258,6 +271,7 @@ For better performance, enable gzip compression:
 ### Issue: Slow loading times
 
 **Solution**:
+
 - Enable Gzip compression (see Step 10)
 - Optimize images before deployment
 - Enable caching via `.htaccess`
@@ -328,6 +342,7 @@ git push origin feature/my-feature
 ## Contact & Support
 
 For issues with:
+
 - **Website content**: Contact the LifeLine Shelter team
 - **Hosting/cPanel**: Contact your hosting provider
 - **Development**: Refer to the project documentation or create an issue
