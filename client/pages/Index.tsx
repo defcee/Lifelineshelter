@@ -828,7 +828,7 @@ const Index = () => {
               <p className="text-sm text-orange-100 mb-6">
                 Build a school, water system, or healthcare facility
               </p>
-              <p className="text-2xl font-bold">$1000+</p>
+              <p className="text-2xl font-bold">Any Amount</p>
             </div>
 
             {/* One-Time Donation */}
