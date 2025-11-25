@@ -154,7 +154,7 @@ const Crisis = () => {
             {[
               {
                 ...crisisFactors[0],
-                image: "https://images.pexels.com/photos/5697183/pexels-photo-5697183.jpeg",
+                image: "https://images.pexels.com/photos/34106813/pexels-photo-34106813.jpeg",
               },
               {
                 ...crisisFactors[1],
@@ -162,19 +162,19 @@ const Crisis = () => {
               },
               {
                 ...crisisFactors[2],
-                image: "https://images.pexels.com/photos/8078549/pexels-photo-8078549.jpeg",
+                image: "https://images.pexels.com/photos/32968674/pexels-photo-32968674.jpeg",
               },
               {
                 ...crisisFactors[3],
-                image: "https://images.pexels.com/photos/6754177/pexels-photo-6754177.jpeg",
+                image: "https://images.pexels.com/photos/4989139/pexels-photo-4989139.jpeg",
               },
               {
                 ...crisisFactors[4],
-                image: "https://images.pexels.com/photos/10082717/pexels-photo-10082717.jpeg",
+                image: "https://images.pexels.com/photos/2406271/pexels-photo-2406271.jpeg",
               },
               {
                 ...crisisFactors[5],
-                image: "https://images.pexels.com/photos/4100643/pexels-photo-4100643.jpeg",
+                image: "https://images.pexels.com/photos/5699463/pexels-photo-5699463.jpeg",
               },
             ].map((factor, index) => (
               <div
