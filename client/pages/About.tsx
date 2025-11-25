@@ -157,17 +157,17 @@ const About = () => {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-bold text-lifeline-blue mb-3">
+                <h3 className="text-xl font-bold text-blue-300 mb-3">
                   Origins & Founding
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-200 mb-4">
                   LifeLine Shelter was founded in response to the humanitarian
                   crisis facing Nigeria. As terrorism and conflict continued to
                   displace families and destroy communities, our founders
                   recognized an urgent need for comprehensive, compassionate aid
                   organizations that could respond quickly and effectively.
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-200">
                   Drawing on years of humanitarian work across West Africa, our
                   team established LifeLine Shelter with a commitment to
                   providing not just emergency relief, but also long-term
@@ -176,10 +176,10 @@ const About = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-lifeline-blue mb-3">
+                <h3 className="text-xl font-bold text-blue-300 mb-3">
                   Growth & Expansion
                 </h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-gray-200 mb-4">
                   Since our inception, LifeLine Shelter has grown from a small
                   emergency response team to a comprehensive humanitarian
                   organization operating across multiple regions in Nigeria.
@@ -187,7 +187,7 @@ const About = () => {
                   needs: food security, access to clean water, healthcare,
                   education, and mental health support.
                 </p>
-                <p className="text-gray-700">
+                <p className="text-gray-200">
                   Our network of dedicated staff, volunteers, and partners has
                   enabled us to help hundreds of thousands of displaced persons
                   and reach millions globally with awareness about the ongoing
@@ -196,10 +196,10 @@ const About = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-lifeline-blue mb-3">
+                <h3 className="text-xl font-bold text-blue-300 mb-3">
                   Our Impact
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-200">
                   Today, LifeLine Shelter operates one of the largest
                   humanitarian networks supporting internally displaced persons
                   in Nigeria. We manage multiple programs simultaneously,
