@@ -395,8 +395,14 @@ const About = () => {
             </div>
 
             {/* Team Member 4 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md">
-              <div className="h-64 bg-gradient-to-br from-purple-500 to-purple-700"></div>
+            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+              <div className="h-64 bg-gradient-to-br from-purple-500 to-purple-700 overflow-hidden">
+                <img
+                  src="https://images.pexels.com/photos/5378700/pexels-photo-5378700.jpeg"
+                  alt="Mohammed Sani, Finance & Transparency"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-lg font-bold text-lifeline-earth mb-1">
                   Mohammed Sani
