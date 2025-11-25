@@ -712,26 +712,28 @@ const Index = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {/* Story 1 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-lifeline-blue to-blue-600 relative overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1469026238294-daf406ff8410?w=400&q=80"
-                  alt="Aisha's family receiving aid"
-                  className="w-full h-full object-cover"
-                />
+            <div className="group relative h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white">
+              <img
+                src="https://images.pexels.com/photos/10629450/pexels-photo-10629450.jpeg"
+                alt="Aisha's family finding refuge and safety"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute top-6 right-6 z-20 p-3 rounded-full bg-white bg-opacity-20 backdrop-blur-sm group-hover:bg-blue-600 group-hover:bg-opacity-90 transition-all duration-300">
+                <Heart className="w-6 h-6 text-white" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-lifeline-earth mb-2">
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
                   Aisha's Second Chance
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
                   After fleeing her home with three children, Aisha found
                   shelter, food, and hope with LifeLine. Today, her eldest is
                   back in school.
                 </p>
                 <Link
                   to="/impact"
-                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                  className="text-white font-semibold text-sm hover:text-blue-300 flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
                 >
                   Read Full Story <ArrowRight className="w-4 h-4" />
                 </Link>
@@ -739,26 +741,28 @@ const Index = () => {
             </div>
 
             {/* Story 2 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-lifeline-green to-green-600 relative overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1532996122724-8f3c2cd83c5d?w=400&q=80"
-                  alt="Community water project inauguration"
-                  className="w-full h-full object-cover"
-                />
+            <div className="group relative h-96 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white">
+              <img
+                src="https://images.pexels.com/photos/28101466/pexels-photo-28101466.jpeg"
+                alt="Children gathering clean water from community well"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-70 group-hover:opacity-80 transition-opacity duration-300"></div>
+              <div className="absolute top-6 right-6 z-20 p-3 rounded-full bg-white bg-opacity-20 backdrop-blur-sm group-hover:bg-green-600 group-hover:bg-opacity-90 transition-all duration-300">
+                <Droplets className="w-6 h-6 text-white" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-lifeline-earth mb-2">
+              <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-green-300 transition-colors">
                   Water Brings Life to Maiduguri
                 </h3>
-                <p className="text-gray-600 text-sm mb-4">
+                <p className="text-gray-200 text-sm leading-relaxed mb-4">
                   Our new borehole system now provides clean water to over 5,000
                   people in a displaced settlement, preventing waterborne
                   diseases.
                 </p>
                 <Link
                   to="/impact"
-                  className="text-lifeline-blue font-semibold text-sm hover:underline flex items-center gap-2"
+                  className="text-white font-semibold text-sm hover:text-green-300 flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300"
                 >
                   Read Full Story <ArrowRight className="w-4 h-4" />
                 </Link>
