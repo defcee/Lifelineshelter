@@ -151,16 +151,51 @@ const Crisis = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {crisisFactors.map((factor, index) => (
+            {[
+              {
+                ...crisisFactors[0],
+                image: "https://images.pexels.com/photos/5697183/pexels-photo-5697183.jpeg",
+              },
+              {
+                ...crisisFactors[1],
+                image: "https://images.pexels.com/photos/17067103/pexels-photo-17067103.jpeg",
+              },
+              {
+                ...crisisFactors[2],
+                image: "https://images.pexels.com/photos/8078549/pexels-photo-8078549.jpeg",
+              },
+              {
+                ...crisisFactors[3],
+                image: "https://images.pexels.com/photos/6754177/pexels-photo-6754177.jpeg",
+              },
+              {
+                ...crisisFactors[4],
+                image: "https://images.pexels.com/photos/10082717/pexels-photo-10082717.jpeg",
+              },
+              {
+                ...crisisFactors[5],
+                image: "https://images.pexels.com/photos/4100643/pexels-photo-4100643.jpeg",
+              },
+            ].map((factor, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-xl border border-gray-200 hover:shadow-lg transition-shadow"
+                className="group relative h-96 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white"
               >
-                <div className="text-4xl mb-4">{factor.icon}</div>
-                <h3 className="text-xl font-bold text-lifeline-earth mb-3">
-                  {factor.title}
-                </h3>
-                <p className="text-gray-700">{factor.description}</p>
+                <img
+                  src={factor.image}
+                  alt={factor.title}
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
+                  <div className="text-4xl mb-4">{factor.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
+                    {factor.title}
+                  </h3>
+                  <p className="text-gray-200 text-sm leading-relaxed">
+                    {factor.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
