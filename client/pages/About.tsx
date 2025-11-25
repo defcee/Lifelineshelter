@@ -5,12 +5,25 @@ const About = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-lifeline-blue via-blue-600 to-blue-700 text-white py-16 md:py-24">
-        <div className="container mx-auto px-4">
+      <section className="relative w-full text-white py-32 md:py-48 overflow-hidden">
+        {/* Full-width background image */}
+        <div
+          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/6317433/pexels-photo-6317433.jpeg')",
+          }}
+        ></div>
+
+        {/* Dark translucent overlay */}
+        <div className="absolute inset-0 bg-black opacity-50 z-5"></div>
+
+        {/* Content */}
+        <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             About LifeLine Shelter
           </h1>
-          <p className="text-lg md:text-xl text-blue-100 max-w-2xl">
+          <p className="text-lg md:text-xl text-gray-100 max-w-2xl">
             Dedicated to saving lives and restoring hope for victims of
             terrorism, conflict, and displacement in Nigeria
           </p>
