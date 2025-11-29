@@ -25,7 +25,7 @@ const SupportUs = () => {
           {/* Why Support Us */}
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-12 max-w-2xl mx-auto flex flex-col md:flex-row gap-6 items-center">
             <div className="md:w-1/2">
-              <img src="/images/placeholder-photo.svg" alt="Support Us" className="page-placeholder-img" />
+              <img src="https://images.pexels.com/photos/30415852/pexels-photo-30415852.jpeg" alt="Support Us - Relief" className="page-placeholder-img" />
             </div>
             <div className="md:w-1/2">
               <h2 className="text-2xl font-bold text-lifeline-blue mb-3">Why Support Us?</h2>

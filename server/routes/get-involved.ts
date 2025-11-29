@@ -10,10 +10,16 @@ export const handleGetInvolved: RequestHandler = async (req, res) => {
   }
 
   try {
+    // Check if SMTP is configured
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.warn("⚠️  SMTP not configured. Email may not be sent. Configure SMTP_HOST, SMTP_USER, SMTP_PASS in .env");
+      return res.status(200).json({ message: "Your submission has been received. We will contact you soon." });
+    }
+
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 587,
-      secure: false,
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: true, // Required for port 465
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,

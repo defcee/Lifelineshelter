@@ -74,7 +74,7 @@ const GetInvolved = () => {
               </CardHeader>
               <CardContent>
                 <div className="mb-4">
-                  <img src="/images/placeholder-photo.svg" alt="Get Involved" className="page-placeholder-img" />
+                  <img src="https://images.pexels.com/photos/6647176/pexels-photo-6647176.jpeg" alt="Get Involved - Volunteer" className="page-placeholder-img" />
                 </div>
                 {success && (
                   <Alert className="mb-4 bg-green-50 border-green-200">
