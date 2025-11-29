@@ -36,7 +36,7 @@ export const Layout = ({ children }: LayoutProps) => {
     { label: t("nav.crisis"), href: "/crisis" },
     { label: t("nav.programs"), href: "/programs" },
     { label: t("nav.getInvolved"), href: "/get-involved" },
-    { label: t("nav.support"), href: "/support" },
+      { label: t("nav.support"), href: "/support" }, // Change to Support Us
     { label: t("nav.impact"), href: "/impact" },
     { label: t("nav.contact"), href: "/contact" },
   ];
@@ -85,7 +85,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 to={link.href}
                 className="px-4 py-2 text-sm font-semibold text-lifeline-earth hover:text-lifeline-blue hover:bg-lifeline-blue hover:bg-opacity-5 rounded-lg transition-all duration-300 relative group"
               >
-                {link.label}
+                  {link.label === t("nav.support") ? "Support Us" : link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-lifeline-blue to-blue-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
               </Link>
             ))}
@@ -134,18 +134,20 @@ export const Layout = ({ children }: LayoutProps) => {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex gap-3 items-center">
-              <button
+              <Link
+                to="/get-involved"
                 className="px-5 py-2.5 rounded-lg border-2 border-lifeline-blue text-lifeline-blue font-semibold text-sm hover:bg-lifeline-blue hover:text-white transition-all duration-300 hover:shadow-md"
                 aria-label="Become a volunteer"
               >
                 {t("nav.volunteer")}
-              </button>
-              <button
+              </Link>
+              <Link
+                to="/get-involved"
                 className="px-5 py-2.5 rounded-lg bg-gradient-to-r from-lifeline-blue to-blue-600 text-white font-semibold text-sm hover:shadow-lg hover:scale-105 transition-all duration-300"
                 aria-label="Make a donation"
               >
                 {t("nav.donate")}
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Toggle Button */}
@@ -187,7 +189,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     className="block px-4 py-2.5 text-sm font-semibold text-lifeline-earth hover:text-lifeline-blue hover:bg-lifeline-blue hover:bg-opacity-5 rounded-lg transition-all duration-300"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {link.label}
+                      {link.label === t("nav.support") ? "Support Us" : link.label}
                   </Link>
                 ))}
               </div>
@@ -219,12 +221,12 @@ export const Layout = ({ children }: LayoutProps) => {
 
               {/* Mobile CTA Buttons */}
               <div className="flex gap-3 pt-4 border-t border-lifeline-sand">
-                <button className="flex-1 px-4 py-2.5 rounded-lg border-2 border-lifeline-blue text-lifeline-blue font-semibold text-sm hover:bg-lifeline-blue hover:text-white transition-all duration-300 hover:shadow-md">
+                <Link to="/get-involved" className="flex-1 px-4 py-2.5 rounded-lg border-2 border-lifeline-blue text-lifeline-blue font-semibold text-sm hover:bg-lifeline-blue hover:text-white transition-all duration-300 hover:shadow-md">
                   {t("nav.volunteer")}
-                </button>
-                <button className="flex-1 px-4 py-2.5 rounded-lg bg-gradient-to-r from-lifeline-blue to-blue-600 text-white font-semibold text-sm hover:shadow-lg transition-all duration-300">
+                </Link>
+                <Link to="/get-involved" className="flex-1 px-4 py-2.5 rounded-lg bg-gradient-to-r from-lifeline-blue to-blue-600 text-white font-semibold text-sm hover:shadow-lg transition-all duration-300">
                   {t("nav.donate")}
-                </button>
+                </Link>
               </div>
             </div>
           </nav>

@@ -9,7 +9,7 @@ import About from "./pages/About";
 import Crisis from "./pages/Crisis";
 import Programs from "./pages/Programs";
 import GetInvolved from "./pages/GetInvolved";
-import Support from "./pages/Support";
+import SupportUs from "./pages/SupportUs";
 import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
 import AdminLogin from "./pages/AdminLogin";
@@ -31,7 +31,7 @@ const App = () => (
             <Route path="/crisis" element={<Crisis />} />
             <Route path="/programs" element={<Programs />} />
             <Route path="/get-involved" element={<GetInvolved />} />
-            <Route path="/support" element={<Support />} />
+            <Route path="/support" element={<SupportUs />} />
             <Route path="/impact" element={<Impact />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/admin/login" element={<AdminLogin />} />

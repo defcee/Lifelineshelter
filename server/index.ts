@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
 import { handleAdminLogin, handleAdminDashboard } from "./routes/auth";
+import { handleGetInvolved } from "./routes/get-involved";
 
 export function createServer() {
   const app = express();
@@ -20,9 +21,13 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
+
   // Admin authentication routes
   app.post("/api/admin/login", handleAdminLogin);
   app.get("/api/admin/dashboard", handleAdminDashboard);
+
+  // Get Involved form submission
+  app.post("/api/get-involved", handleGetInvolved);
 
   return app;
 }

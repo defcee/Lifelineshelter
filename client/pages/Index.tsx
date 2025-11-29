@@ -101,14 +101,14 @@ const Index = () => {
                 animation: "fadeInUp 0.8s ease-out 0.8s both",
               }}
             >
-              <button className="px-8 py-4 rounded-lg bg-white text-lifeline-blue font-bold hover:bg-blue-50 transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg">
+              <Link to="/get-involved" className="px-8 py-4 rounded-lg bg-white text-lifeline-blue font-bold hover:bg-blue-50 transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg">
                 <Heart className="w-5 h-5" />
                 Donate Now
-              </button>
-              <button className="px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-lifeline-blue transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg">
+              </Link>
+              <Link to="/get-involved" className="px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-lifeline-blue transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg">
                 <Users className="w-5 h-5" />
                 Volunteer
-              </button>
+              </Link>
             </div>
 
             {/* Impact Stats - Grid animation */}
@@ -867,14 +867,14 @@ const Index = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 rounded-lg bg-white text-lifeline-blue font-bold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
+            <Link to="/get-involved" className="px-8 py-4 rounded-lg bg-white text-lifeline-blue font-bold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
               <Heart className="w-5 h-5" />
               Donate Now
-            </button>
-            <button className="px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-lifeline-blue transition-colors flex items-center justify-center gap-2">
+            </Link>
+            <Link to="/get-involved" className="px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-lifeline-blue transition-colors flex items-center justify-center gap-2">
               <Users className="w-5 h-5" />
               Join as Volunteer
-            </button>
+            </Link>
           </div>
 
           <p className="text-sm text-blue-200 mt-6">

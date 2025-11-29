@@ -1,5 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Heart, Users, Globe, Target, Award, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -471,14 +472,14 @@ const About = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 rounded-lg bg-white text-lifeline-blue font-bold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
+            <Link to="/get-involved" className="px-8 py-4 rounded-lg bg-white text-lifeline-blue font-bold hover:bg-blue-50 transition-colors flex items-center justify-center gap-2">
               <Heart className="w-5 h-5" />
               Donate
-            </button>
-            <button className="px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-lifeline-blue transition-colors flex items-center justify-center gap-2">
+            </Link>
+            <Link to="/get-involved" className="px-8 py-4 rounded-lg border-2 border-white text-white font-bold hover:bg-white hover:text-lifeline-blue transition-colors flex items-center justify-center gap-2">
               <Users className="w-5 h-5" />
               Volunteer
-            </button>
+            </Link>
           </div>
         </div>
       </section>
