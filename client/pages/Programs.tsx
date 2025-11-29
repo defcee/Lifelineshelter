@@ -105,8 +105,21 @@ const programData = [
 const Programs = () => {
   return (
     <Layout>
-      <section className="py-20 bg-lifeline-sand bg-opacity-20 min-h-screen">
-        <div className="container mx-auto px-4">
+      <section className="py-0 min-h-screen">
+        <div className="page-hero" style={{ backgroundImage: "url('/images/hero-programs.svg')" }}>
+          <div className="hero-inner">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center text-white mb-12">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">🌍 Our Aids and Programs</h1>
+                <p className="text-lg opacity-90">
+                  At LifeLine Shelter, our work is driven by compassion, dignity, and the belief that every life deserves safety, hope, and opportunity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="py-20 bg-lifeline-sand bg-opacity-20">
+          <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-lifeline-earth mb-4">
               🌍 Our Aids and Programs
@@ -173,6 +186,7 @@ const Programs = () => {
               Back to Home
             </Link>
           </div>
+        </div>
         </div>
       </section>
     </Layout>

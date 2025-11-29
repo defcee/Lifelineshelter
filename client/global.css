@@ -144,3 +144,29 @@
     opacity: 1;
   }
 }
+
+/* Page hero banner used across Programs, Get Involved, Support Us */
+.page-hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(3,37,76,0.45), rgba(3,37,76,0.25));
+  pointer-events: none;
+}
+.page-hero .hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 4rem 0;
+}
+.page-placeholder-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(6, 30, 55, 0.12);
+}

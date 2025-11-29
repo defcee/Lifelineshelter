@@ -51,19 +51,31 @@ const GetInvolved = () => {
 
   return (
     <Layout>
-      <section className="py-20 min-h-screen bg-lifeline-sand bg-opacity-20 flex items-center">
-        <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto">
-            <Card>
+      <section className="py-0 min-h-screen">
+        <div className="page-hero" style={{ backgroundImage: "url('/images/hero-get-involved.svg')" }}>
+          <div className="hero-inner">
+            <div className="container mx-auto px-4">
+              <div className="max-w-2xl mx-auto text-center text-white mb-8">
+                <h1 className="text-3xl md:text-4xl font-bold">Get Involved: Volunteer or Donate</h1>
+                <p className="opacity-90 mt-2">Fill out the form below to volunteer or make a donation. We appreciate your support!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="py-20 flex items-center">
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto">
+              <Card>
               <CardHeader>
-                <CardTitle className="text-3xl font-bold text-lifeline-blue text-center mb-2">
-                  Get Involved: Volunteer or Donate
+                <CardTitle className="text-2xl font-bold text-lifeline-blue text-center mb-2">
+                  Join Us — Donate or Volunteer
                 </CardTitle>
-                <p className="text-center text-gray-600">
-                  Fill out the form below to volunteer or make a donation. We appreciate your support!
-                </p>
+                <p className="text-center text-gray-600">Use this form to tell us how you'd like to help. We will follow up by email.</p>
               </CardHeader>
               <CardContent>
+                <div className="mb-4">
+                  <img src="/images/placeholder-photo.svg" alt="Get Involved" className="page-placeholder-img" />
+                </div>
                 {success && (
                   <Alert className="mb-4 bg-green-50 border-green-200">
                     <CheckCircle className="h-4 w-4 text-green-600" />

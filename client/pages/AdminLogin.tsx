@@ -35,10 +35,21 @@ const AdminLogin = () => {
         body: JSON.stringify(loginData),
       });
 
-      const data: AdminLoginResponse = await response.json();
+      // Handle non-JSON responses gracefully (server may return HTML on errors)
+      const contentType = response.headers.get("content-type") || "";
 
-      if (!response.ok || !data.success) {
-        setError(data.message || "Login failed");
+      let data: AdminLoginResponse | null = null;
+      if (contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        // Fallback: read as text and show as error
+        const text = await response.text();
+        setError(text || "Unexpected server response");
+        return;
+      }
+
+      if (!response.ok || !data || !data.success) {
+        setError((data && data.message) || "Login failed");
         return;
       }
 

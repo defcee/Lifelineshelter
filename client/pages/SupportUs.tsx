@@ -5,29 +5,40 @@ import { Heart, Users, Handshake, Megaphone, ArrowRight } from "lucide-react";
 const SupportUs = () => {
   return (
     <Layout>
-      <section className="py-20 min-h-screen bg-lifeline-sand bg-opacity-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-lifeline-earth mb-4">
-              Support Us
-            </h1>
-            <p className="text-lg text-gray-700 mb-4">
-              Your support helps us save lives, restore dignity, and build hope for families affected by crisis, violence, and displacement in Nigeria.
-            </p>
+      <section className="py-0 min-h-screen">
+        <div className="page-hero" style={{ backgroundImage: "url('/images/hero-support.svg')" }}>
+          <div className="hero-inner">
+            <div className="container mx-auto px-4">
+              <div className="max-w-3xl mx-auto text-center text-white mb-12">
+                <h1 className="text-4xl md:text-5xl font-bold">Support Us</h1>
+                <p className="opacity-90 mt-2">Your support helps us save lives, restore dignity, and build hope for families affected by crisis in Nigeria.</p>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+            </div>
 
           {/* Why Support Us */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-12 max-w-2xl mx-auto">
-            <h2 className="text-2xl font-bold text-lifeline-blue mb-3">Why Support Us?</h2>
-            <p className="text-gray-700 mb-2">
-              LifeLine Shelter is committed to providing immediate relief and long-term solutions for vulnerable communities. Your contribution enables us to deliver food, water, healthcare, education, and hope where it’s needed most.
-            </p>
-            <ul className="list-disc list-inside text-gray-600 mt-4 space-y-1 text-left">
-              <li>Direct impact on families in crisis</li>
-              <li>Transparent, accountable use of funds</li>
-              <li>Community-driven, sustainable programs</li>
-              <li>Every gift, large or small, makes a difference</li>
-            </ul>
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-12 max-w-2xl mx-auto flex flex-col md:flex-row gap-6 items-center">
+            <div className="md:w-1/2">
+              <img src="/images/placeholder-photo.svg" alt="Support Us" className="page-placeholder-img" />
+            </div>
+            <div className="md:w-1/2">
+              <h2 className="text-2xl font-bold text-lifeline-blue mb-3">Why Support Us?</h2>
+              <p className="text-gray-700 mb-2">
+                LifeLine Shelter is committed to providing immediate relief and long-term solutions for vulnerable communities. Your contribution enables us to deliver food, water, healthcare, education, and hope where it’s needed most.
+              </p>
+              <ul className="list-disc list-inside text-gray-600 mt-4 space-y-1 text-left">
+                <li>Direct impact on families in crisis</li>
+                <li>Transparent, accountable use of funds</li>
+                <li>Community-driven, sustainable programs</li>
+                <li>Every gift, large or small, makes a difference</li>
+              </ul>
+            </div>
           </div>
 
           {/* Ways to Support */}
@@ -96,6 +107,7 @@ const SupportUs = () => {
             </div>
             <p className="text-gray-600">Thank you for supporting LifeLine Shelter and the families we serve.</p>
           </div>
+        </div>
         </div>
       </section>
     </Layout>
