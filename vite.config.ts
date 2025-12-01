@@ -1,7 +1,6 @@
 import { defineConfig, Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -10,13 +9,13 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     fs: {
       allow: [".", "./client", "./shared"],
-      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
+      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"], // prevent backend access
     },
   },
   build: {
     outDir: "dist/spa",
   },
-  plugins: [react(), expressPlugin()],
+  plugins: [react(), expressDevMiddleware()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./client"),
@@ -25,15 +24,21 @@ export default defineConfig(({ mode }) => ({
   },
 }));
 
-function expressPlugin(): Plugin {
+/**
+ * Express middleware for Vite dev server.
+ * Only used in development mode.
+ * Import backend code lazily to avoid Vite trying to bundle server-only packages.
+ */
+function expressDevMiddleware(): Plugin {
   return {
-    name: "express-plugin",
-    apply: "serve", // Only apply during development (serve mode)
+    name: "vite:express-dev-middleware",
+    apply: "serve",
     configureServer(server) {
-      const app = createServer();
-
-      // Add Express app as middleware to Vite dev server
-      server.middlewares.use(app);
+      // Lazy import to prevent Vite from parsing backend dependencies
+      import("./server").then(({ createServer }) => {
+        const app = createServer();
+        server.middlewares.use(app);
+      });
     },
   };
 }
