@@ -30,7 +30,10 @@
     "paths": {
       "@/*": ["./client/*"],
       "@shared/*": ["./shared/*"]
-    }
+    },
+
+    /* Suppress deprecation warning for baseUrl */
+    "ignoreDeprecations": "6.0"
   },
   "include": [
     "client/**/*",
