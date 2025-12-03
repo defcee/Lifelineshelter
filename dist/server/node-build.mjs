@@ -4,8 +4,7 @@ import "dotenv/config";
 import cors from "cors";
 import nodemailer from "nodemailer";
 
-// ---------------- API HANDLERS ---------------- //
-
+// --- Handlers ---
 const handleDemo = (req, res) => {
   res.status(200).json({ message: "Hello from Express server" });
 };
@@ -18,9 +17,10 @@ function generateToken(username) {
 }
 
 const handleAdminLogin = (req, res) => {
-  const { username, password } = req.body || {};
-  if (!username || !password) return res.status(400).json({ success: false, message: "Username and password required" });
-
+  const { username, password } = req.body;
+  if (!username || !password) {
+    return res.status(400).json({ success: false, message: "Username and password are required" });
+  }
   if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
     const token = generateToken(username);
     return res.status(200).json({
@@ -30,14 +30,12 @@ const handleAdminLogin = (req, res) => {
       admin: { username, email: process.env.ADMIN_EMAIL }
     });
   }
-
   res.status(401).json({ success: false, message: "Invalid username or password" });
 };
 
 const handleAdminDashboard = (req, res) => {
   const token = req.headers.authorization?.replace("Bearer ", "");
   if (!token) return res.status(401).json({ authenticated: false, message: "No authorization token provided" });
-
   try {
     const decoded = Buffer.from(token, "base64").toString("utf-8");
     const [username] = decoded.split(":");
@@ -54,20 +52,17 @@ const handleGetInvolved = async (req, res) => {
   if (!firstName || !lastName || !email || !type || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
-
   try {
     if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
-      console.warn("⚠️ SMTP not configured. Email not sent.");
+      console.warn("⚠️  SMTP not configured.");
       return res.status(200).json({ message: "Your submission has been received. We will contact you soon." });
     }
-
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT) || 465,
       secure: true,
       auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
     });
-
     const mailOptions = {
       from: `LifeLine Shelter <${process.env.SMTP_USER}>`,
       to: EMAIL_TO,
@@ -79,16 +74,14 @@ const handleGetInvolved = async (req, res) => {
              <p><strong>Type:</strong> ${type}</p>
              <p><strong>Message:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>`
     };
-
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Your message has been sent. Thank you!" });
-  } catch {
+  } catch (err) {
     res.status(500).json({ message: "Failed to send email. Please try again later." });
   }
 };
 
-// ---------------- SERVER ---------------- //
-
+// --- Server setup ---
 function createServer() {
   const app = express();
   app.use(cors());
@@ -101,27 +94,27 @@ function createServer() {
   app.post("/api/admin/login", handleAdminLogin);
   app.get("/api/admin/dashboard", handleAdminDashboard);
   app.post("/api/get-involved", handleGetInvolved);
-
-  // Catch-all for API routes that don't exist
   app.all("/api/*", (_req, res) => res.status(404).json({ error: "API endpoint not found" }));
 
   return app;
 }
 
 const app = createServer();
-const port = process.env.PORT || 3000;
 
-// Serve static frontend
-const distPath = path.resolve("./dist/spa"); // use relative path for Render
+// Serve SPA
+const distPath = path.resolve("dist/spa");
 app.use(express.static(distPath));
 
-// Catch-all route for frontend
+// Catch-all for SPA
 app.get("*", (req, res) => {
-  if (req.path.startsWith("/api/")) return res.status(404).json({ error: "API endpoint not found" });
+  if (req.path.startsWith("/api/") || req.path.startsWith("/health")) {
+    return res.status(404).json({ error: "API endpoint not found" });
+  }
   res.sendFile(path.join(distPath, "index.html"));
 });
 
 // Start server
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`🚀 Server running on port ${port}`);
   console.log(`📱 Frontend: http://localhost:${port}`);
@@ -129,7 +122,5 @@ app.listen(port, () => {
 });
 
 // Graceful shutdown
-["SIGTERM", "SIGINT"].forEach(sig => process.on(sig, () => {
-  console.log(`🛑 Received ${sig}, shutting down gracefully`);
-  process.exit(0);
-}));
+process.on("SIGTERM", () => { console.log("🛑 SIGTERM received"); process.exit(0); });
+process.on("SIGINT", () => { console.log("🛑 SIGINT received"); process.exit(0); });
