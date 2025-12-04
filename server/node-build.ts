@@ -104,9 +104,10 @@ function createServer() {
 
   // Catch-all for unknown API endpoints (fix for Express 5 + path-to-regexp v8)
   // Works in Express 5 + path-to-regexp v8
-app.all("/api/:catchAll(*)", (req, res) => {
+app.all("/api/:catchAll(.*)", (req, res) => {
   res.status(404).json({ error: "API endpoint not found" });
 });
+
 
 
   return app;

@@ -31,9 +31,10 @@ export function createServer() {
 
   // Ensure any unmatched API route returns JSON (prevents HTML index being returned for API requests)
  // Works in Express 5 + path-to-regexp v8
-app.all("/api/:catchAll(*)", (req, res) => {
+app.all("/api/:catchAll(.*)", (req, res) => {
   res.status(404).json({ error: "API endpoint not found" });
 });
+
 
 
   return app;
