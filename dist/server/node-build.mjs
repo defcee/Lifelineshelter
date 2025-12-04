@@ -80,7 +80,7 @@ ${message}`,
       res.status(500).json({ message: "Failed to send email. Please try again later." });
     }
   });
-  app2.all("/api/:catchAll(.*)", (req, res) => {
+  app2.all("/api/:splat*", (req, res) => {
     res.status(404).json({ error: "API endpoint not found" });
   });
   return app2;
