@@ -30,8 +30,8 @@ export function createServer() {
   app.post("/api/get-involved", handleGetInvolved);
 
   // Ensure any unmatched API route returns JSON (prevents HTML index being returned for API requests)
-  app.all("/api/*", (_req, res) => {
-    res.status(404).json({ error: "API endpoint not found" });
+  app.all("/api/*", (req, res) => {
+  res.status(404).json({ error: "API endpoint not found" });
   });
 
   return app;
