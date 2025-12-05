@@ -83,13 +83,18 @@ ${message}`,
   return app2;
 }
 const app = createServer();
-const spaPath = "/home/lifelin2/server/spa";
+const spaPath = path.resolve(__dirname, "../spa");
 app.use(express.static(spaPath));
 app.get("*", (req, res) => {
   if (req.path.startsWith("/api/") || req.path.startsWith("/health")) {
     return res.status(404).json({ error: "API endpoint not found" });
   }
-  res.sendFile(path.join(spaPath, "index.html"));
+  res.sendFile(path.join(spaPath, "index.html"), (err) => {
+    if (err) {
+      console.error(`Error serving index.html from ${spaPath}:`, err.message);
+      res.status(500).json({ error: "Failed to serve index.html" });
+    }
+  });
 });
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);

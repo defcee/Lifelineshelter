@@ -119,7 +119,8 @@ const app = createServer();
 // ----------------------
 // Serve SPA
 // ----------------------
-const spaPath = "/home/lifelin2/server/spa"; // cPanel absolute path
+// Resolve SPA path relative to the directory where node-build.mjs is running
+const spaPath = path.resolve(__dirname, "../spa");
 app.use(express.static(spaPath));
 
 // SPA routing: serve index.html for all non-API routes
@@ -127,7 +128,12 @@ app.get("*", (req: Request, res: Response) => {
   if (req.path.startsWith("/api/") || req.path.startsWith("/health")) {
     return res.status(404).json({ error: "API endpoint not found" });
   }
-  res.sendFile(path.join(spaPath, "index.html"));
+  res.sendFile(path.join(spaPath, "index.html"), (err) => {
+    if (err) {
+      console.error(`Error serving index.html from ${spaPath}:`, err.message);
+      res.status(500).json({ error: "Failed to serve index.html" });
+    }
+  });
 });
 
 // ----------------------

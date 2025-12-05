@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   root: path.resolve(__dirname),
   build: {
-    outDir: "server/spa", // output goes into Node server folder
+    outDir: "dist/spa", // output goes into dist folder alongside server build
     emptyOutDir: true,
     assetsDir: "assets",
     sourcemap: false,
