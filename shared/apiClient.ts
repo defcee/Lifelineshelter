@@ -1,18 +1,14 @@
 // shared/apiClient.ts
-
 import { API_BASE_URL } from './config';
 
-// Use relative paths for same-origin requests (production)
-// For development with separate backend, set VITE_API_URL environment variable
-const rawBase = import.meta.env.VITE_API_URL || '';
-// Sanitize API_BASE: if it contains "undefined" or is not a valid URL/path, use config fallback
-const API_BASE = rawBase && !rawBase.includes('undefined') && rawBase !== 'undefined'
-  ? rawBase.replace(/\/$/, '') // Remove trailing slash if present
-  : API_BASE_URL.replace(/\/$/, ''); // Fallback to Render API URL from config
+// Prefer environment variable if defined, otherwise fallback to config
+const API_BASE = import.meta.env.VITE_API_URL?.replace(/\/$/, '') || API_BASE_URL.replace(/\/$/, '');
 
-// Export apiFetch
+// Generic fetch function
 export async function apiFetch<T>(endpoint: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(`${API_BASE}${endpoint}`, {
+  const url = endpoint.startsWith('/') ? `${API_BASE}${endpoint}` : `${API_BASE}/${endpoint}`;
+
+  const res = await fetch(url, {
     headers: {
       "Content-Type": "application/json",
     },
@@ -26,15 +22,15 @@ export async function apiFetch<T>(endpoint: string, options?: RequestInit): Prom
   return res.json() as Promise<T>;
 }
 
-// Import API types
-import type { DemoResponse, AdminLoginRequest, AdminLoginResponse } from "./api";
+// API types
+import type { DemoResponse, AdminLoginRequest, AdminLoginResponse } from './api';
 
-// Export demo fetcher
-export const getDemo = () => apiFetch<DemoResponse>("/api/demo");
+// Demo fetcher
+export const getDemo = () => apiFetch<DemoResponse>('/api/demo');
 
-// Export login fetcher
+// Admin login fetcher
 export const adminLogin = (data: AdminLoginRequest) =>
-  apiFetch<AdminLoginResponse>("/api/admin/login", {
-    method: "POST",
+  apiFetch<AdminLoginResponse>('/api/admin/login', {
+    method: 'POST',
     body: JSON.stringify(data),
   });
