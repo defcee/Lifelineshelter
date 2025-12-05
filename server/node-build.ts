@@ -1,8 +1,21 @@
-// nodebuild.ts
 import path from "path";
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
+
+// ----------------------
+// Environment variables
+// ----------------------
+const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@lifelineshelter.com";
+const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "customerrepresentative@lifelineshelter.com";
+const SMTP_HOST = process.env.SMTP_HOST || "mail.lifelineshelter.com";
+const SMTP_PORT = Number(process.env.SMTP_PORT) || 465;
+const SMTP_USER = process.env.SMTP_USER || "customerrepresentative@lifelineshelter.com";
+const SMTP_PASS = process.env.SMTP_PASS || "your_email_password_here";
+const PORT = Number(process.env.PORT) || 3000;
+const PING_MESSAGE = process.env.PING_MESSAGE || "ping pong";
 
 // ----------------------
 // Create Express Server
@@ -14,76 +27,65 @@ function createServer() {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  // Ping / Health check
-  app.get("/api/ping", (_req, res) => {
-    const ping = process.env.PING_MESSAGE ?? "ping";
-    res.json({ message: ping });
+  // ----------------------
+  // API Routes
+  // ----------------------
+
+  // Health check
+  app.get("/api/ping", (_req: Request, res: Response) => {
+    res.json({ message: PING_MESSAGE });
   });
 
   // Demo endpoint
-  app.get("/api/demo", (_req, res) => {
+  app.get("/api/demo", (_req: Request, res: Response) => {
     res.json({ message: "Hello from Express server" });
   });
 
-  // Admin login example
-  const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
-  const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
-
+  // Admin login
   function generateToken(username: string) {
     return Buffer.from(`${username}:${Date.now()}`).toString("base64");
   }
 
-  app.post("/api/admin/login", (req, res) => {
+  app.post("/api/admin/login", (req: Request, res: Response) => {
     const { username, password } = req.body;
     if (!username || !password) {
       return res.status(400).json({ success: false, message: "Username and password required" });
     }
-
     if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
       const token = generateToken(username);
       return res.status(200).json({
         success: true,
         message: "Login successful",
         token,
-        admin: {
-          username,
-          email: process.env.ADMIN_EMAIL
-        }
+        admin: { username, email: ADMIN_EMAIL }
       });
     }
-
     res.status(401).json({ success: false, message: "Invalid username or password" });
   });
 
-  // Example: Contact / Get Involved endpoint
-  const EMAIL_TO = process.env.CONTACT_EMAIL || "customerrepresentative@lifelineshelter.com";
-
-  app.post("/api/get-involved", async (req, res) => {
+  // Contact / Get Involved
+  app.post("/api/get-involved", async (req: Request, res: Response) => {
     const { firstName, lastName, email, type, message } = req.body || {};
-
     if (!firstName || !lastName || !email || !type || !message) {
       return res.status(400).json({ message: "All fields are required." });
     }
 
     try {
-      if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
         console.warn("⚠️ SMTP not configured. Email may not be sent.");
         return res.status(200).json({ message: "Your submission has been received. We will contact you soon." });
       }
 
       const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT) || 465,
+        host: SMTP_HOST,
+        port: SMTP_PORT,
         secure: true,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS
-        }
+        auth: { user: SMTP_USER, pass: SMTP_PASS }
       });
 
       const mailOptions = {
-        from: `LifeLine Shelter <${process.env.SMTP_USER}>`,
-        to: EMAIL_TO,
+        from: `LifeLine Shelter <${SMTP_USER}>`,
+        to: CONTACT_EMAIL,
         subject: `[LifeLine] New ${type} Submission from ${firstName} ${lastName}`,
         replyTo: email,
         text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nType: ${type}\nMessage:\n${message}`,
@@ -94,7 +96,6 @@ function createServer() {
       };
 
       await transporter.sendMail(mailOptions);
-
       res.status(200).json({ message: "Your message has been sent. Thank you!" });
     } catch (err) {
       console.error("Failed to send email:", err);
@@ -102,13 +103,10 @@ function createServer() {
     }
   });
 
-  // Catch-all for unknown API endpoints (fix for Express 5 + path-to-regexp v8)
-  // Works in Express 5 + path-to-regexp v8
-app.all("/api/:splat*", (req, res) => {
-  res.status(404).json({ error: "API endpoint not found" });
-});
-
-
+  // Catch-all for unknown API endpoints
+  app.all("/api/:splat*", (_req: Request, res: Response) => {
+    res.status(404).json({ error: "API endpoint not found" });
+  });
 
   return app;
 }
@@ -117,34 +115,32 @@ app.all("/api/:splat*", (req, res) => {
 // Start Server
 // ----------------------
 const app = createServer();
-const port = process.env.PORT || 3000;
 
-// Serve built SPA files
-const __dirname = import.meta.dirname;
-const distPath = path.join(__dirname, "../spa");
-app.use(express.static(distPath));
+// ----------------------
+// Serve SPA
+// ----------------------
+const spaPath = "/home/lifelin2/server/spa"; // cPanel absolute path
+app.use(express.static(spaPath));
 
-// SPA routing - send index.html for all non-API routes
-app.all("*", (req, res) => {
+// SPA routing: serve index.html for all non-API routes
+app.get("*", (req: Request, res: Response) => {
   if (req.path.startsWith("/api/") || req.path.startsWith("/health")) {
     return res.status(404).json({ error: "API endpoint not found" });
   }
-  res.sendFile(path.join(distPath, "index.html"));
+  res.sendFile(path.join(spaPath, "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`🚀 Fusion Starter server running on port ${port}`);
-  console.log(`📱 Frontend: http://localhost:${port}`);
-  console.log(`🔧 API: http://localhost:${port}/api`);
+// ----------------------
+// Start listening
+// ----------------------
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`📱 Frontend available at /server/spa/`);
+  console.log(`🔧 API available at /api/`);
 });
 
+// ----------------------
 // Graceful shutdown
-process.on("SIGTERM", () => {
-  console.log("🛑 Received SIGTERM, shutting down gracefully");
-  process.exit(0);
-});
-
-process.on("SIGINT", () => {
-  console.log("🛑 Received SIGINT, shutting down gracefully");
-  process.exit(0);
-});
+// ----------------------
+process.on("SIGTERM", () => process.exit(0));
+process.on("SIGINT", () => process.exit(0));

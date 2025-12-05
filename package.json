@@ -3,8 +3,12 @@
   "private": true,
   "type": "module",
   "pkg": {
-    "assets": ["dist/spa/*"],
-    "scripts": ["dist/server/**/*.js"]
+    "assets": [
+      "dist/spa/*"
+    ],
+    "scripts": [
+      "dist/server/**/*.js"
+    ]
   },
   "scripts": {
     "dev": "vite",
@@ -63,6 +67,7 @@
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "@types/three": "^0.176.0",
+    "@vitejs/plugin-react": "^5.1.1",
     "@vitejs/plugin-react-swc": "^4.0.0",
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
@@ -92,7 +97,7 @@
     "tailwindcss-animate": "^1.0.7",
     "three": "^0.176.0",
     "tsx": "^4.20.3",
-    "typescript": "^5.9.2",
+    "typescript": "^5.9.3",
     "vaul": "^1.1.2",
     "vite": "^7.1.2",
     "vitest": "^3.2.4"

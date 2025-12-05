@@ -1,44 +1,22 @@
-import { defineConfig, Plugin } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 import path from "path";
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-    fs: {
-      allow: [".", "./client", "./shared"],
-      deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"], // prevent backend access
-    },
-  },
+export default defineConfig({
+  plugins: [react()],
+  root: path.resolve(__dirname),
   build: {
-    outDir: "dist/spa",
+    outDir: "server/spa", // output goes into Node server folder
+    emptyOutDir: true,
+    assetsDir: "assets",
+    sourcemap: false,
   },
-  plugins: [react(), expressDevMiddleware()],
+  base: "/", // ensures correct paths for JS/CSS
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./client"),
-      "@shared": path.resolve(__dirname, "./shared"),
+      "@": path.resolve(__dirname, "client"),
+      "@shared": path.resolve(__dirname, "shared"),
+      "@server": path.resolve(__dirname, "server"),
     },
   },
-}));
-
-/**
- * Express middleware for Vite dev server.
- * Only used in development mode.
- * Import backend code lazily to avoid Vite trying to bundle server-only packages.
- */
-function expressDevMiddleware(): Plugin {
-  return {
-    name: "vite:express-dev-middleware",
-    apply: "serve",
-    configureServer(server) {
-      // Lazy import to prevent Vite from parsing backend dependencies
-      import("./server").then(({ createServer }) => {
-        const app = createServer();
-        server.middlewares.use(app);
-      });
-    },
-  };
-}
+});
