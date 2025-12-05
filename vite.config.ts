@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   root: path.resolve(__dirname),
   build: {
-    outDir: "spa", // output frontend to spa folder for cPanel (/home/lifelin2/server/spa)
+    outDir: "dist/spa", // 🔹 build output goes inside dist/spa to match Node server
     emptyOutDir: true,
     assetsDir: "assets",
     sourcemap: false,
