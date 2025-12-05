@@ -90,7 +90,7 @@ const port = process.env.PORT || 3e3;
 const __dirname$1 = import.meta.dirname;
 const distPath = path.join(__dirname$1, "../spa");
 app.use(express.static(distPath));
-app.get("*", (req, res) => {
+app.all("*", (req, res) => {
   if (req.path.startsWith("/api/") || req.path.startsWith("/health")) {
     return res.status(404).json({ error: "API endpoint not found" });
   }

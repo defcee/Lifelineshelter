@@ -1,3 +1,4 @@
+// client/pages/AdminLogin.tsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
@@ -5,9 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertCircle, LogIn } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { AlertCircle, LogIn } from "lucide-react";
 import type { AdminLoginRequest, AdminLoginResponse } from "@shared/api";
+import { apiFetch } from "@shared/apiClient";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -22,44 +24,24 @@ const AdminLogin = () => {
     setError(null);
 
     try {
-      const loginData: AdminLoginRequest = {
-        username,
-        password,
-      };
-
-      const response = await fetch("/api/admin/login", {
+      const loginData: AdminLoginRequest = { username, password };
+      const data: AdminLoginResponse = await apiFetch("/api/admin/login", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData),
       });
 
-      // Handle non-JSON responses gracefully (server may return HTML on errors)
-      const contentType = response.headers.get("content-type") || "";
-
-      let data: AdminLoginResponse | null = null;
-      if (contentType.includes("application/json")) {
-        data = await response.json();
-      } else {
-        // Fallback: read as text and show as error
-        const text = await response.text();
-        setError(text || "Unexpected server response");
+      if (!data.success) {
+        setError(data.message || "Login failed");
         return;
       }
 
-      if (!response.ok || !data || !data.success) {
-        setError((data && data.message) || "Login failed");
-        return;
-      }
-
-      // Store token in localStorage
+      // Store token and username in localStorage
       if (data.token) {
         localStorage.setItem("adminToken", data.token);
         localStorage.setItem("adminUsername", username);
       }
 
-      // Redirect to dashboard
       navigate("/admin/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "An error occurred during login");
@@ -121,19 +103,11 @@ const AdminLogin = () => {
               </Button>
             </form>
 
-            <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-              <p className="text-sm text-gray-600 mb-2">
-                <strong>Demo Credentials:</strong>
-              </p>
-              <p className="text-sm text-gray-600">
-                Username: <code className="bg-white px-2 py-1 rounded">admin</code>
-              </p>
-              <p className="text-sm text-gray-600">
-                Password: <code className="bg-white px-2 py-1 rounded">admin123</code>
-              </p>
-              <p className="text-xs text-gray-500 mt-2">
-                (Change these in production by setting ADMIN_USERNAME and ADMIN_PASSWORD in .env)
-              </p>
+            <div className="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200 text-center text-gray-600">
+              <p className="mb-1"><strong>Demo Credentials:</strong></p>
+              <p>Username: <code className="bg-white px-2 py-1 rounded">admin</code></p>
+              <p>Password: <code className="bg-white px-2 py-1 rounded">admin123</code></p>
+              <p className="text-xs mt-2">(Change these in production via .env variables)</p>
             </div>
           </CardContent>
         </Card>

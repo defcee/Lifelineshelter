@@ -1,3 +1,4 @@
+// client/pages/GetInvolved.tsx
 import { useState } from "react";
 import { Layout } from "@/components/Layout";
 import { Input } from "@/components/ui/input";
@@ -7,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle, CheckCircle } from "lucide-react";
+import { apiFetch } from "@shared/apiClient"; // centralized fetch helper
 
 const GetInvolved = () => {
   const [form, setForm] = useState({
@@ -20,7 +22,9 @@ const GetInvolved = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -29,16 +33,14 @@ const GetInvolved = () => {
     setIsLoading(true);
     setError(null);
     setSuccess(false);
+
     try {
-      const res = await fetch("/api/get-involved", {
+      await apiFetch("/api/get-involved", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.message || "Submission failed");
-      }
+
       setSuccess(true);
       setForm({ firstName: "", lastName: "", email: "", type: "Donate", message: "" });
     } catch (err) {
