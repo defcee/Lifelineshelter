@@ -1,7 +1,9 @@
 import path from "path";
+import { fileURLToPath } from "url";
 import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
+const __dirname$1 = path.dirname(fileURLToPath(import.meta.url));
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@lifelineshelter.com";
@@ -83,7 +85,7 @@ ${message}`,
   return app2;
 }
 const app = createServer();
-const spaPath = path.resolve(__dirname, "../spa");
+const spaPath = path.resolve(__dirname$1, "../spa");
 app.use(express.static(spaPath));
 app.get("*", (req, res) => {
   if (req.path.startsWith("/api/") || req.path.startsWith("/health")) {

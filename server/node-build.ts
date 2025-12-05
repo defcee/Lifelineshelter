@@ -1,7 +1,10 @@
 import path from "path";
+import { fileURLToPath } from "url";
 import express, { Request, Response } from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // ----------------------
 // Environment variables
