@@ -30,11 +30,11 @@ export async function apiFetch<T>(endpoint: string, options?: RequestInit): Prom
 import type { DemoResponse, AdminLoginRequest, AdminLoginResponse } from "./api";
 
 // Export demo fetcher
-export const getDemo = () => apiFetch<DemoResponse>("/api/demo");
+export const getDemo = () => apiFetch<DemoResponse>("/demo");
 
 // Export login fetcher
 export const adminLogin = (data: AdminLoginRequest) =>
-  apiFetch<AdminLoginResponse>("/api/admin/login", {
+  apiFetch<AdminLoginResponse>("/admin/login", {
     method: "POST",
     body: JSON.stringify(data),
   });

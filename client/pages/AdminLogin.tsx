@@ -8,8 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle, LogIn } from "lucide-react";
-import type { AdminLoginRequest, AdminLoginResponse } from "@shared/api";
-import { apiFetch } from "@shared/apiClient";
+import type { AdminLoginRequest } from "@shared/api";
+import { adminLogin } from "@shared/apiClient";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -25,11 +25,7 @@ const AdminLogin = () => {
 
     try {
       const loginData: AdminLoginRequest = { username, password };
-      const data: AdminLoginResponse = await apiFetch("/api/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(loginData),
-      });
+      const data = await adminLogin(loginData);
 
       if (!data.success) {
         setError(data.message || "Login failed");
