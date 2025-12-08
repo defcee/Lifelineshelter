@@ -51,7 +51,7 @@ const AdminDashboard = () => {
       }
 
       try {
-        const data: AdminDashboardResponse = await apiFetch("/admin/dashboard", {
+        const data: AdminDashboardResponse = await apiFetch("/api/admin/dashboard", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

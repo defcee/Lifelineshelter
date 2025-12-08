@@ -1,89 +1,127 @@
+import "dotenv/config";
 import path from "path";
 import { fileURLToPath } from "url";
 import express from "express";
 import cors from "cors";
 import nodemailer from "nodemailer";
-const __dirname$1 = path.dirname(fileURLToPath(import.meta.url));
+const handleDemo = (req, res) => {
+  const response = {
+    message: "Hello from Express server"
+  };
+  res.status(200).json(response);
+};
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "admin@lifelineshelter.com";
-const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "customerrepresentative@lifelineshelter.com";
-const SMTP_HOST = process.env.SMTP_HOST || "mail.lifelineshelter.com";
-const SMTP_PORT = Number(process.env.SMTP_PORT) || 465;
-const SMTP_USER = process.env.SMTP_USER || "customerrepresentative@lifelineshelter.com";
-const SMTP_PASS = process.env.SMTP_PASS || "your_email_password_here";
-const PORT = Number(process.env.PORT) || 3e3;
-const PING_MESSAGE = process.env.PING_MESSAGE || "ping pong";
+function generateToken(username) {
+  return Buffer.from(`${username}:${Date.now()}`).toString("base64");
+}
+const handleAdminLogin = (req, res) => {
+  const { username, password } = req.body;
+  if (!username || !password) {
+    return res.status(400).json({
+      success: false,
+      message: "Username and password are required"
+    });
+  }
+  if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+    const token = generateToken(username);
+    return res.status(200).json({
+      success: true,
+      message: "Login successful",
+      token,
+      admin: {
+        username,
+        email: process.env.ADMIN_EMAIL
+      }
+    });
+  }
+  res.status(401).json({
+    success: false,
+    message: "Invalid username or password"
+  });
+};
+const handleAdminDashboard = (req, res) => {
+  const token = req.headers.authorization?.replace("Bearer ", "");
+  if (!token) {
+    return res.status(401).json({
+      authenticated: false,
+      message: "No authorization token provided"
+    });
+  }
+  try {
+    const decoded = Buffer.from(token, "base64").toString("utf-8");
+    const [username] = decoded.split(":");
+    res.status(200).json({
+      authenticated: true,
+      message: "Authenticated",
+      user: { username }
+    });
+  } catch {
+    res.status(401).json({
+      authenticated: false,
+      message: "Invalid or expired token"
+    });
+  }
+};
+const EMAIL_TO = process.env.CONTACT_EMAIL || "customerrepresentative@lifelineshelter.com";
+const handleGetInvolved = async (req, res) => {
+  const { firstName, lastName, email, type, message } = req.body || {};
+  if (!firstName || !lastName || !email || !type || !message) {
+    return res.status(400).json({ message: "All fields are required." });
+  }
+  try {
+    if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+      console.warn("⚠️  SMTP not configured. Email may not be sent. Configure SMTP_HOST, SMTP_USER, SMTP_PASS in .env");
+      return res.status(200).json({ message: "Your submission has been received. We will contact you soon." });
+    }
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: true,
+      // Required for port 465
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS
+      }
+    });
+    const mailOptions = {
+      from: `LifeLine Shelter <${process.env.SMTP_USER}>`,
+      to: EMAIL_TO,
+      subject: `[LifeLine] New ${type} Submission from ${firstName} ${lastName}`,
+      replyTo: email,
+      text: `Name: ${firstName} ${lastName}
+Email: ${email}
+Type: ${type}
+Message:
+${message}`,
+      html: `<p><strong>Name:</strong> ${firstName} ${lastName}</p><p><strong>Email:</strong> ${email}</p><p><strong>Type:</strong> ${type}</p><p><strong>Message:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>`
+    };
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: "Your message has been sent. Thank you!" });
+  } catch (err) {
+    res.status(500).json({ message: "Failed to send email. Please try again later." });
+  }
+};
+const __dirname$1 = path.dirname(fileURLToPath(import.meta.url));
 function createServer() {
   const app2 = express();
   app2.use(cors());
   app2.use(express.json());
   app2.use(express.urlencoded({ extended: true }));
   app2.get("/api/ping", (_req, res) => {
-    res.json({ message: PING_MESSAGE });
+    const ping = process.env.PING_MESSAGE ?? "ping pong";
+    res.json({ message: ping });
   });
-  app2.get("/api/demo", (_req, res) => {
-    res.json({ message: "Hello from Express server" });
-  });
-  function generateToken(username) {
-    return Buffer.from(`${username}:${Date.now()}`).toString("base64");
-  }
-  app2.post("/api/admin/login", (req, res) => {
-    const { username, password } = req.body;
-    if (!username || !password) {
-      return res.status(400).json({ success: false, message: "Username and password required" });
-    }
-    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-      const token = generateToken(username);
-      return res.status(200).json({
-        success: true,
-        message: "Login successful",
-        token,
-        admin: { username, email: ADMIN_EMAIL }
-      });
-    }
-    res.status(401).json({ success: false, message: "Invalid username or password" });
-  });
-  app2.post("/api/get-involved", async (req, res) => {
-    const { firstName, lastName, email, type, message } = req.body || {};
-    if (!firstName || !lastName || !email || !type || !message) {
-      return res.status(400).json({ message: "All fields are required." });
-    }
-    try {
-      if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) ;
-      const transporter = nodemailer.createTransport({
-        host: SMTP_HOST,
-        port: SMTP_PORT,
-        secure: true,
-        auth: { user: SMTP_USER, pass: SMTP_PASS }
-      });
-      const mailOptions = {
-        from: `LifeLine Shelter <${SMTP_USER}>`,
-        to: CONTACT_EMAIL,
-        subject: `[LifeLine] New ${type} Submission from ${firstName} ${lastName}`,
-        replyTo: email,
-        text: `Name: ${firstName} ${lastName}
-Email: ${email}
-Type: ${type}
-Message:
-${message}`,
-        html: `<p><strong>Name:</strong> ${firstName} ${lastName}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Type:</strong> ${type}</p>
-               <p><strong>Message:</strong><br/>${message.replace(/\n/g, "<br/>")}</p>`
-      };
-      await transporter.sendMail(mailOptions);
-      res.status(200).json({ message: "Your message has been sent. Thank you!" });
-    } catch (err) {
-      console.error("Failed to send email:", err);
-      res.status(500).json({ message: "Failed to send email. Please try again later." });
-    }
-  });
+  app2.get("/api/demo", handleDemo);
+  app2.post("/api/admin/login", handleAdminLogin);
+  app2.get("/api/admin/dashboard", handleAdminDashboard);
+  app2.post("/api/get-involved", handleGetInvolved);
   app2.all("/api/:splat*", (_req, res) => {
     res.status(404).json({ error: "API endpoint not found" });
   });
   return app2;
 }
+const PORT = Number(process.env.PORT) || 3e3;
 const app = createServer();
 const spaPath = path.resolve(__dirname$1, "../spa");
 app.use(express.static(spaPath));
@@ -100,7 +138,7 @@ app.get("*", (req, res) => {
 });
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📱 Frontend available at /server/spa/`);
+  console.log(`📱 Frontend available at /`);
   console.log(`🔧 API available at /api/`);
 });
 process.on("SIGTERM", () => process.exit(0));
