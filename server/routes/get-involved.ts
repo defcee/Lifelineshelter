@@ -38,6 +38,10 @@ export const handleGetInvolved: RequestHandler = async (req, res) => {
     await transporter.sendMail(mailOptions);
     res.status(200).json({ message: "Your message has been sent. Thank you!" });
   } catch (err) {
-    res.status(500).json({ message: "Failed to send email. Please try again later." });
+    console.error("Email send error:", err instanceof Error ? err.message : err);
+    res.status(500).json({
+      message: "Failed to send email. Please try again later.",
+      error: err instanceof Error ? err.message : "Unknown error"
+    });
   }
 };
