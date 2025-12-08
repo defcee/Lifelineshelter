@@ -8,9 +8,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { AlertCircle, CheckCircle } from "lucide-react";
-import { apiFetch } from "@shared/apiClient"; // centralized fetch helper
+import { apiFetch } from "@shared/apiClient";
+import { usePageContent } from "@/lib/usePageContent";
 
 const GetInvolved = () => {
+  const pageContent = usePageContent("get-involved");
+  const pageTitle = pageContent.find(s => s.id === "involved-title")?.content || "Get Involved: Volunteer or Donate";
+  const pageSubtitle = pageContent.find(s => s.id === "involved-subtitle")?.content || "Fill out the form below to volunteer or make a donation. We appreciate your support!";
+
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -57,8 +62,8 @@ const GetInvolved = () => {
           <div className="hero-inner">
             <div className="container mx-auto px-4">
               <div className="max-w-2xl mx-auto text-center text-white mb-8">
-                <h1 className="text-3xl md:text-4xl font-bold">Get Involved: Volunteer or Donate</h1>
-                <p className="opacity-90 mt-2">Fill out the form below to volunteer or make a donation. We appreciate your support!</p>
+                <h1 className="text-3xl md:text-4xl font-bold">{pageTitle}</h1>
+                <p className="opacity-90 mt-2">{pageSubtitle}</p>
               </div>
             </div>
           </div>
@@ -70,10 +75,10 @@ const GetInvolved = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold text-lifeline-blue text-center mb-2">
-                    Join Us — Donate or Volunteer
+                    {pageTitle}
                   </CardTitle>
                   <p className="text-center text-gray-600">
-                    Use this form to tell us how you'd like to help. We will follow up by email.
+                    {pageSubtitle}
                   </p>
                 </CardHeader>
                 <CardContent>
