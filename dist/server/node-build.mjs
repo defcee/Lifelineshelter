@@ -75,10 +75,9 @@ const handleGetInvolved = async (req, res) => {
       return res.status(200).json({ message: "Your submission has been received. We will contact you soon." });
     }
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 465,
+      host: "email-smtp.us-east-1.amazonaws.com",
+      port: 465,
       secure: true,
-      // Required for port 465
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS
