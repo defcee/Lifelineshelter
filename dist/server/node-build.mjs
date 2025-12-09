@@ -75,13 +75,13 @@ const handleGetInvolved = async (req, res) => {
       return res.status(200).json({ message: "Your submission has been received. We will contact you soon." });
     }
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT) || 465,
-      secure: true,
-      // Required for port 465
+      host: "mail.lifelineshelter.com",
+      port: 587,
+      secure: false,
+      // TLS
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS
+        user: "customerrepresentative@lifelineshelter.com",
+        pass: "Makuo123@"
       }
     });
     const mailOptions = {
