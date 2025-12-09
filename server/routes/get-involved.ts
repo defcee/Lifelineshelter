@@ -17,13 +17,13 @@ export const handleGetInvolved: RequestHandler = async (req, res) => {
     }
 
     const transporter = nodemailer.createTransport({
-      host: "mail.lifelineshelter.com",
-      port: 587,
-      secure: false, // TLS
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT) || 465,
+      secure: true, // Required for port 465
       auth: {
-        user: "customerrepresentative@lifelineshelter.com",
-        pass: "Makuo123@",
-      }
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
     });
 
     const mailOptions = {
