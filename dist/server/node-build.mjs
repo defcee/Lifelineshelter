@@ -79,11 +79,16 @@ const handleGetInvolved = async (req, res) => {
       console.warn("⚠️ FROM_EMAIL missing. Set it in .env. Must be a verified sender.");
       return res.status(500).json({ message: "Sender email not configured." });
     }
+    const bccEmails = process.env.BCC_EMAIL ? process.env.BCC_EMAIL.split(",").map((e) => e.trim()) : [];
     await resend.emails.send({
       from: process.env.FROM_EMAIL,
       // Must be verified in your Resend dashboard
-      to: EMAIL_TO,
-      replyTo: email,
+      to: [EMAIL_TO],
+      // must be an array
+      bcc: bccEmails,
+      // BCC addresses from .env
+      replyTo: [email],
+      // array format
       subject: `[LifeLine] New ${type} Submission from ${firstName} ${lastName}`,
       html: `
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>

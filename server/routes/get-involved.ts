@@ -26,11 +26,17 @@ export const handleGetInvolved: RequestHandler = async (req, res) => {
       return res.status(500).json({ message: "Sender email not configured." });
     }
 
+    // Read BCC emails from .env and convert to array
+    const bccEmails: string[] = process.env.BCC_EMAIL
+      ? process.env.BCC_EMAIL.split(",").map(e => e.trim())
+      : [];
+
     // Send the email
     await resend.emails.send({
       from: process.env.FROM_EMAIL, // Must be verified in your Resend dashboard
-      to: EMAIL_TO,
-      replyTo: email,
+      to: [EMAIL_TO],               // must be an array
+      bcc: bccEmails,               // BCC addresses from .env
+      replyTo: [email],             // array format
       subject: `[LifeLine] New ${type} Submission from ${firstName} ${lastName}`,
       html: `
         <p><strong>Name:</strong> ${firstName} ${lastName}</p>
